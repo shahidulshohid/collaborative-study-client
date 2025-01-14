@@ -181,8 +181,11 @@ const SignUpPage = () => {
     }
 
     createUser(email, password).then((res) => {
-      updateUserProfile(name, photo);
-      setUser({ displayName: name, photoURL: photo, email: email });
+      updateUserProfile(name, photo)
+      .then(()=> {
+        //create user entry in the data
+        setUser({ displayName: name, photoURL: photo, email: email });
+      })
       toast.success("Sign Up is successfully", {
         position: "top-center",
       });
