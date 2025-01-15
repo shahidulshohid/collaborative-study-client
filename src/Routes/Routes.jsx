@@ -5,6 +5,7 @@ import LoginPage from "../Pages/LoginPage/LoginPage";
 import SignUpPage from "../Pages/SignUpPage/SignUPPage";
 import DashboardLayout from "../Layout/DashboardLayout";
 import CreateStudySession from "../Pages/Dashboard/Tutor/CreateStudySesstion/CreateStudySession";
+import ReadMorePage from "../Pages/Home/ReadMorePage/ReadMorePage"
 
 export const router = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path:'/readMore/:id',
+                element:<ReadMorePage></ReadMorePage>
             }
         ]
     },

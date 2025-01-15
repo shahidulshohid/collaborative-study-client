@@ -6,21 +6,15 @@ import { Link } from "react-router-dom";
 const ShowStudySection = () => {
   const axiosPublic = useAxiosPublic();
   const {
-    data: session = [],
-    isLoading,
-    refetch,
+    data: session = []
   } = useQuery({
     queryKey: ["session"],
     queryFn: async () => {
       const res = await axiosPublic.get("/studySessions");
-      return res.data;
+      return res?.data;
     },
   });
 
-  // for showing closed or ongoing
-  const currentDate = new Date().toLocaleString("en-us");
-  console.log(currentDate);
-  console.log(session);
   return (
     <div className="my-12">
         <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">Show Study Session</h3>
@@ -46,13 +40,13 @@ const ShowStudySection = () => {
                     new Date(),
                     format(new Date(item.resEndDate), "P")
                   ) === 1 ? (
-                    <button className="text-lg text-red-500">Closed</button>
+                    <button className="btn text-lg text-red-500">Closed</button>
                   ) : (
-                    <button className="text-lg text-green-500">Ongoing</button>
+                    <button className="btn text-lg text-green-500">Ongoing</button>
                   )}
                 </p>
               </div>
-              <Link><button className="px-5 py-1 bg-blue-500 text-white rounded-sm text-lg mt-3">Read More</button></Link>
+              <Link to={`readMore/${item._id}`}><button className="px-5 py-1 bg-blue-500 text-white rounded-sm text-lg mt-3">Read More</button></Link>
             </div>
           </div>
         </div>
