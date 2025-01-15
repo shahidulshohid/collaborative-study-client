@@ -3,8 +3,10 @@ import signInLottieData from "../../assets/lottie/signIn.json";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/useAxiosPublice";
 
 const LoginPage = () => {
+  const axiosPublic = useAxiosPublic()
   const {signIn, signInWithGoogle, signInWithGithub} = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
@@ -35,7 +37,17 @@ const LoginPage = () => {
   };
 
   const handleGoogleLoginHandler = () => {
-    signInWithGoogle();
+    signInWithGoogle()
+    .then(result => {
+      const studentInfo = {
+        name: result.user.displayName,
+        email:result.user.email,
+        photo:result.user.photoURL,
+        role:'student'
+      }
+      axiosPublic.post('/students', studentInfo)
+    })
+
     if (location.state) {
       navigate(location.state.from);
     } else {
@@ -44,7 +56,17 @@ const LoginPage = () => {
   };
 
   const handleGitHubLoginHandler = () => {
-    signInWithGithub();
+    signInWithGithub()
+    .then(result => {
+      const studentInfo = {
+        name: result.user.displayName,
+        email:result.user.email,
+        photo:result.user.photoURL,
+        role:'student'
+      }
+      axiosPublic.post('/students', studentInfo)
+    })
+
     if (location.state) {
       navigate(location.state.from);
     } else {

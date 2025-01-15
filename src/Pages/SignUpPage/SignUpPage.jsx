@@ -40,7 +40,7 @@ const SignUpPage = () => {
       );
       return;
     }
-    
+
     createUser(email, password).then((res) => {
       updateUserProfile(name, photo)
       .then(()=> {
@@ -54,9 +54,8 @@ const SignUpPage = () => {
           role: 'student', 
         };
         axiosPublic.post('/students', studentInfo)
-
       })
-      toast.success("Sign Up is successfully", {
+      toast.success("Student created is successfully", {
         position: "top-center",
       });
       navigate("/");
