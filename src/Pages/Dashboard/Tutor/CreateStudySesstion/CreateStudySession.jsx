@@ -3,6 +3,7 @@ import useAuth from "../../../../Hooks/useAuth";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { toast } from "react-toastify";
 
 const CreateStudySession = () => {
   const { user } = useAuth();
@@ -28,6 +29,7 @@ const CreateStudySession = () => {
     const sessionDuration = form.duration.value;
     const registrationFee = 0;
     const status = "pending";
+    const image = form.image.value;
 
     // session information
     const sessionInfo = {
@@ -42,11 +44,16 @@ const CreateStudySession = () => {
       sessionDuration,
       registrationFee,
       status,
+      image
     };
     // send session data to database 
     axiosSecure.post('/studySessions', sessionInfo)
     .then(res => {
-        console.log(res.data)
+        if(res.data.insertedId){
+            toast.success("Create study session is successfully", {
+                position: "top-center",
+              });
+        }
     })
   };
 
@@ -191,7 +198,20 @@ const CreateStudySession = () => {
             />
           </div>
         </div>
-        <div className="flex justify-end mt-6">
+        <div className="mb-3">
+          <div className="w-full">
+            <label className="text-gray-700 " htmlFor="job_title">
+              Image
+            </label>
+            <input
+              name="image"
+              type="text"
+              placeholder="Image"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+            />
+          </div>
+        </div>
+        <div className="mt-6">
           <button className="disabled:cursor-not-allowed px-8 py-2.5 leading-5 text-white text-xl transition-colors duration-300 bg-blue-500 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 w-full">
             Create Study Session
           </button>

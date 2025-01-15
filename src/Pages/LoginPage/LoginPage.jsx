@@ -3,7 +3,7 @@ import signInLottieData from "../../assets/lottie/signIn.json";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosPublic from "../../Hooks/useAxiosPublice";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const LoginPage = () => {
   const axiosPublic = useAxiosPublic()

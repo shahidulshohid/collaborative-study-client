@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosPublic from "../../Hooks/useAxiosPublice";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SignUpPage = () => {
   const axiosPublic = useAxiosPublic()
