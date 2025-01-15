@@ -29,7 +29,7 @@ const ShowStudySection = () => {
             />
             <div className="p-3 border space-y-1">
               <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-gray-500">{item.description}</p>
+              <p className="text-gray-500">{item.description.substring(0, 100)}...</p>
               <div className="flex items-center gap-1">
                 <p className="text-xl">Registration is</p>
                 <p>

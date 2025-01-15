@@ -24,40 +24,39 @@ const ReadMorePage = () => {
     resStartDate,
     resEndDate,
     claStartDate,
-    claEndDAte,
+    claEndDate,
     sessionDuration,
   } = session;
   console.log(session);
   return (
     <div className="my-12">
       <Container>
-        <div className="flex gap-5">
+        <div className="md:flex gap-10">
           <div>
             <img className="h-full" src={image} alt="" />
           </div>
-          <div>
-            <h3>{title}</h3>
-            <h4>{tutorName}</h4>
-            <p>{description}</p>
+          <div className="space-y-2">
+            <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
+            <h4 className="text-xl font-semibold">Tutor Name: {tutorName}</h4>
             <p>
-              Registration start date:{" "}
+              Registration start date: {" "}
               {resStartDate && format(new Date(resStartDate), "P")}
             </p>
             <p>
               Registration end date:{" "}
               {resEndDate && format(new Date(resEndDate), "P")}
             </p>
-            <p>{description}</p>
             <p>
               Class start date:{" "}
               {claStartDate && format(new Date(claStartDate), "P")}
             </p>
             <p>
-              Class end date: {claEndDAte && format(new Date(claEndDAte), "P")}
+              Class end date: {claEndDate && format(new Date(claEndDate), "P")}
             </p>
             <p>Session Duration: {sessionDuration}</p>
+            <p className="text-gray-500">{description}</p>
             <div className="flex items-center gap-1">
-              <p className="text-xl">Registration</p>
+              <p className="text-lg">Registration</p>
               <p>
                 <HiOutlineArrowNarrowRight className="w-8 mt-1" />
               </p>
