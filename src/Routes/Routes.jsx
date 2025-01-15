@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import SignUpPage from "../Pages/SignUpPage/SignUPPage";
 import DashboardLayout from "../Layout/DashboardLayout";
+import CreateStudySession from "../Pages/Dashboard/Tutor/CreateStudySesstion/CreateStudySession";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +29,11 @@ export const router = createBrowserRouter([
         path:'dashboard',
         element:<DashboardLayout></DashboardLayout>,
         children: [
-            //another routes
+            //tutor routes
+            {
+                path:'createStudySession',
+                element:<CreateStudySession></CreateStudySession>
+            }
 
 
             // admin routes 
