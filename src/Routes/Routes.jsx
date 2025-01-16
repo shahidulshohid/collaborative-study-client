@@ -6,6 +6,8 @@ import SignUpPage from "../Pages/SignUpPage/SignUPPage";
 import DashboardLayout from "../Layout/DashboardLayout";
 import CreateStudySession from "../Pages/Dashboard/Tutor/CreateStudySesstion/CreateStudySession";
 import ReadMorePage from "../Pages/Home/ReadMorePage/ReadMorePage"
+import PrivateRoute from "./PrivateRoute";
+import ViewAllStudy from "../Pages/Dashboard/Admin/ViewAllStudy/ViewAllStudy";
 
 export const router = createBrowserRouter([
     {
@@ -18,7 +20,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/readMore/:id',
-                element:<ReadMorePage></ReadMorePage>
+                element:<PrivateRoute><ReadMorePage></ReadMorePage></PrivateRoute>
             }
         ]
     },
@@ -38,10 +40,14 @@ export const router = createBrowserRouter([
             {
                 path:'createStudySession',
                 element:<CreateStudySession></CreateStudySession>
-            }
+            },
 
 
             // admin routes 
+            {
+                path:'viewAllStudy',
+                element:<ViewAllStudy></ViewAllStudy>
+            }
         ]
     }
 ])

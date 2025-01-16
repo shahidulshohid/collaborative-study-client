@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import Container from "../../Shared/Container/Container";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
 import { compareAsc, format } from "date-fns";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
@@ -27,7 +26,6 @@ const ReadMorePage = () => {
     claEndDate,
     sessionDuration,
   } = session;
-  console.log(session);
   return (
     <div className="my-12">
       <Container>

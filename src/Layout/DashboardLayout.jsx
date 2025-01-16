@@ -5,7 +5,7 @@ const DashboardLayout = () => {
   // TODO: get  isAdmin value from the database
   // const [isAdmin] = useAdmin()
   // console.log(isAdmin)
-  const isAdmin = true;
+  // const isAdmin = true;
   return (
     <div className="flex">
       {/* dashboard side bar */}

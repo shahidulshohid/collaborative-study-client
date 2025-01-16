@@ -65,13 +65,16 @@ const LoginPage = () => {
         role:'student'
       }
       axiosPublic.post('/students', studentInfo)
-    })
+      .then(res => {
+        
 
     if (location.state) {
       navigate(location.state.from);
     } else {
       navigate("/");
     }
+      })
+    })
   }
   return (
     <div className="hero min-h-screen">
