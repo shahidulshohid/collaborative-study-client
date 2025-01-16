@@ -2,6 +2,7 @@ import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import {useQuery} from '@tanstack/react-query'
 import ViewAllStudyModal from "../ViewAllStudyModal/ViewAllStudyModal";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const ViewAllStudy = () => {
   const [item, setItem] = useState([])
@@ -13,6 +14,15 @@ const ViewAllStudy = () => {
             return res?.data
         }
     })
+    const handleRejecting = (id) => {
+      axiosSecure.delete(`/studySessionsAll/${id}`)
+      .then((res) => {
+        if(res.data.deletedCount > 0){
+          toast.success('Rejected is successfully')
+          refetch()
+        }
+      })
+    }
   return (
     <div>
       <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">
@@ -42,7 +52,7 @@ const ViewAllStudy = () => {
                   <td>{item.status}</td>
                   <td className="flex items-center gap-3 md:gap-5">
                     <button onClick={()=>{document.getElementById('my_modal_1').showModal(), setItem(item)}} className="py-1 px-2 bg-blue-500 text-white">Approve</button>
-                    <button className="py-1 px-3 bg-blue-500 text-white">Reject</button>
+                    <button onClick={()=> handleRejecting(item._id)} className="py-1 px-3 bg-blue-500 text-white">Reject</button>
                   </td>
                 </tr>
               ) )

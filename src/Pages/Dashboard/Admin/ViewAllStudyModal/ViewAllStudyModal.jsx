@@ -18,17 +18,19 @@ const ViewAllStudyModal = ({item}) => {
             // setFree(true)
             setAmount(0)
         }
-        console.log(sessionType)
-        console.log(amount)
+        // console.log(sessionType)
+        // console.log(amount)
 
 
         // sending data to database after updating
-        const upData = {registrationFee: amount} 
-        axiosSecure.patch(`/studySessionsAll/${_id}`, upData)
-        .then(data => console.log(data))
+        const updateData = {registrationFee: amount} 
+        axiosSecure.patch(`/studySessionsAll/${_id}`, updateData)
+        .then(data =>{
+            toast.success('Session approved is successfully')
+        })
     }
     
-    console.log(item)
+    // console.log(item)
   return (
     <dialog id="my_modal_1" className="modal">
       <div className="modal-box">

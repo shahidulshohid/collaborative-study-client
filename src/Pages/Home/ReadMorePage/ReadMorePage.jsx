@@ -25,6 +25,7 @@ const ReadMorePage = () => {
     claStartDate,
     claEndDate,
     sessionDuration,
+    registrationFee,
   } = session;
   return (
     <div className="my-12">
@@ -51,6 +52,7 @@ const ReadMorePage = () => {
             <p>
               Class end date: {claEndDate && format(new Date(claEndDate), "P")}
             </p>
+            {/* <p>Registration Fee: {registrationFee}</p> */}
             <p>Session Duration: {sessionDuration}</p>
             <p className="text-gray-500">{description}</p>
             <div className="flex items-center gap-1">
