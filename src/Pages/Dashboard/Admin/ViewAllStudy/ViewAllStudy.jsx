@@ -1,8 +1,10 @@
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import {useQuery} from '@tanstack/react-query'
 import ViewAllStudyModal from "../ViewAllStudyModal/ViewAllStudyModal";
+import { useState } from "react";
 
 const ViewAllStudy = () => {
+  const [item, setItem] = useState([])
     const axiosSecure = useAxiosSecure();
     const {data: session = [], refetch} = useQuery({
         queryKey: ['session'],
@@ -11,7 +13,6 @@ const ViewAllStudy = () => {
             return res?.data
         }
     })
-    console.log(session)
   return (
     <div>
       <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">
@@ -24,6 +25,7 @@ const ViewAllStudy = () => {
             <tr>
               <th></th>
               <th>Title</th>
+              {/* <th>Registration Fee</th> */}
               <th>Tutor Name</th>
               <th>Status</th>
               <th>Action</th>
@@ -35,10 +37,11 @@ const ViewAllStudy = () => {
                 <tr key={item._id}>
                   <th></th>
                   <td>{item.title}</td>
+                  {/* <td>{item.registrationFee}</td> */}
                   <td>{item.tutorName}</td>
                   <td>{item.status}</td>
                   <td className="flex items-center gap-3 md:gap-5">
-                    <button onClick={()=>document.getElementById('my_modal_1').showModal()} className="py-1 px-2 bg-blue-500 text-white">Approve</button>
+                    <button onClick={()=>{document.getElementById('my_modal_1').showModal(), setItem(item)}} className="py-1 px-2 bg-blue-500 text-white">Approve</button>
                     <button className="py-1 px-3 bg-blue-500 text-white">Reject</button>
                   </td>
                 </tr>
@@ -47,7 +50,7 @@ const ViewAllStudy = () => {
           </tbody>
         </table>
       </div>
-      <ViewAllStudyModal></ViewAllStudyModal>
+      <ViewAllStudyModal item={item}></ViewAllStudyModal>
     </div>
   );
 };

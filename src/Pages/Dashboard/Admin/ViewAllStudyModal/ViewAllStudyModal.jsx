@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
-import { useParams } from "react-router-dom";
 
-const ViewAllStudyModal = () => {
-    const axiosSecure = useAxiosSecure()
-    const {id} = useParams()
+const ViewAllStudyModal = ({item}) => {
+    const {registrationFee, _id} = item
+    console.log(registrationFee)
     const [sessionType, setSessionType] = useState('free')
     const [amount, setAmount] = useState(0)
+    const axiosSecure = useAxiosSecure()
     // const [free, setFree] = useState(false)
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -20,8 +20,15 @@ const ViewAllStudyModal = () => {
         }
         console.log(sessionType)
         console.log(amount)
-    }
 
+
+        // sending data to database after updating
+        const upData = {registrationFee: amount} 
+        axiosSecure.patch(`/studySessionsAll/${_id}`, upData)
+        .then(data => console.log(data))
+    }
+    
+    console.log(item)
   return (
     <dialog id="my_modal_1" className="modal">
       <div className="modal-box">
