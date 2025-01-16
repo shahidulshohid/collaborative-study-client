@@ -1,11 +1,12 @@
 import Lottie from "lottie-react";
-import registerLottieData from "../../assets/lottie/register.json";
+import registerLottieData from "../../assets/lottie/registerImg.json";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const SignUpPage = () => {
   const axiosPublic = useAxiosPublic();
@@ -53,7 +54,7 @@ const SignUpPage = () => {
           role: role,
         };
         })
-        toast.success("Student created is successfully", {
+        toast.success(`${role} created is successfully`, {
           position: "top-center",
         });
         navigate("/");
@@ -61,7 +62,11 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="hero min-h-screen">
+    <div>
+      <Link to="/">
+      <button className="ml-20 mt-2 text-blue-500 flex items-center gap-2"><FaArrowLeftLong className="mt-1" /> Back to home</button>
+      </Link>
+      <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse gap-6 md:gap-10 lg:gap-24">
         <div className="w-96">
           <Lottie animationData={registerLottieData}></Lottie>
@@ -153,6 +158,7 @@ const SignUpPage = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

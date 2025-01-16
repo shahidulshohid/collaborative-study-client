@@ -8,6 +8,7 @@ import CreateStudySession from "../Pages/Dashboard/Tutor/CreateStudySesstion/Cre
 import ReadMorePage from "../Pages/Home/ReadMorePage/ReadMorePage"
 import PrivateRoute from "./PrivateRoute";
 import ViewAllStudy from "../Pages/Dashboard/Admin/ViewAllStudy/ViewAllStudy";
+import ViewBookSession from "../Pages/Dashboard/Students/ViewBookSession/ViewBookSession";
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,12 @@ export const router = createBrowserRouter([
             {
                 path:'viewAllStudy',
                 element:<ViewAllStudy></ViewAllStudy>
+            },
+
+            //students routes
+            {
+                path:'viewBookSession',
+                element:<ViewBookSession></ViewBookSession>
             }
         ]
     }

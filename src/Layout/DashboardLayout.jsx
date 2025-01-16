@@ -32,6 +32,7 @@ const DashboardLayout = () => {
             </>
           {/* ) : ( */}
             <>
+            {/* tutor routes */}
               <li>
                 <NavLink to="/">Tutor Home</NavLink>
               </li>
@@ -60,7 +61,8 @@ const DashboardLayout = () => {
           {/* )} */}
           {/* shared nav link */}
           <div className="divider"></div>
-
+          
+          {/* student routes */}
           <li>
             <NavLink to="/dashboard/studentHome">Student Home</NavLink>
           </li>
