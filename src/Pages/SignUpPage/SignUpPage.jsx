@@ -1,7 +1,6 @@
-
 import Lottie from "lottie-react";
-import registerLottieData from '../../assets/lottie/register.json'
-import {useState } from "react";
+import registerLottieData from "../../assets/lottie/register.json";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -9,9 +8,9 @@ import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SignUpPage = () => {
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
-  const { createUser, updateUserProfile, setUser } = useAuth()
+  const { createUser, updateUserProfile, setUser } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   // handle register
   const handleSubmit = (e) => {
@@ -21,6 +20,7 @@ const SignUpPage = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const role = e.target.role.value
 
     if (password.length < 6) {
       toast.error("Length must be at least 6 character", {
@@ -42,8 +42,7 @@ const SignUpPage = () => {
     }
 
     createUser(email, password).then((res) => {
-      updateUserProfile(name, photo)
-      .then(()=> {
+      updateUserProfile(name, photo).then(() => {
         //create user entry in the data
         setUser({ displayName: name, photoURL: photo, email: email });
 
@@ -51,15 +50,14 @@ const SignUpPage = () => {
           name: name,
           email: email,
           photo: photo,
-          role: 'student', 
+          role: role,
         };
-        axiosPublic.post('/students', studentInfo)
-      })
-      toast.success("Student created is successfully", {
-        position: "top-center",
+        })
+        toast.success("Student created is successfully", {
+          position: "top-center",
+        });
+        navigate("/");
       });
-      navigate("/");
-    });
   };
 
   return (
@@ -85,17 +83,31 @@ const SignUpPage = () => {
                 required
               />
             </div>
+            <div className="">
+            <div className="w-full">
+              <div className="flex flex-col gap-2">
+                <label className="label" htmlFor="role">
+                  Role
+                </label>
+                <select name="role" className="border p-3 rounded-md bg-white">
+                  <option value="Student">Student</option>
+                  <option value="Tutor">Tutor</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+            </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Photo URL</span>
+                <span className="label-text">PhotoURL</span>
               </label>
               <input
                 type="text"
                 name="photo"
-                placeholder="photo-url"
+                placeholder="PhotoURL"
                 className="input input-bordered"
                 required
               />
+            </div>
             </div>
             <div className="form-control">
               <label className="label">
@@ -146,5 +158,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-
-

@@ -46,13 +46,15 @@ const LoginPage = () => {
         role:'student'
       }
       axiosPublic.post('/students', studentInfo)
-    })
-
+      .then(res => {
     if (location.state) {
       navigate(location.state.from);
     } else {
       navigate("/");
     }
+      })
+    })
+
   };
 
   const handleGitHubLoginHandler = () => {
@@ -66,7 +68,7 @@ const LoginPage = () => {
       }
       axiosPublic.post('/students', studentInfo)
       .then(res => {
-        
+        console.log(location)
 
     if (location.state) {
       navigate(location.state.from);
