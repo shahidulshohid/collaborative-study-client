@@ -7,7 +7,7 @@ const ViewAllStudy = () => {
     const {data: session = [], refetch} = useQuery({
         queryKey: ['session'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/studySessions')
+            const res = await axiosSecure.get('/studySessionsAll')
             return res?.data
         }
     })

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { useParams } from "react-router-dom";
 
 const ViewAllStudyModal = () => {
     const axiosSecure = useAxiosSecure()
+    const {id} = useParams()
     const [sessionType, setSessionType] = useState('free')
     const [amount, setAmount] = useState(0)
     // const [free, setFree] = useState(false)
