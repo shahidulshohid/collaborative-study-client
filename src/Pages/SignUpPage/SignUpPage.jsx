@@ -42,27 +42,30 @@ const SignUpPage = () => {
       return;
     }
 
+
+   
+
+
     createUser(email, password).then((res) => {
       updateUserProfile(name, photo).then(() => {
         //create user entry in the data
         setUser({ displayName: name, photoURL: photo, email: email });
-
-        const studentInfo = {
-          name: name,
-          email: email,
-          photo: photo,
-          role: role,
-        };
-        // send data to server 
-        axiosPublic.post("/students", studentInfo).then((res) => {
-        toast.success(`created is successfully`, {
-          position: "top-center",
-        });
-        });
-
-        })
-        navigate("/");
+    
       });
+      
+      const studentInfo = {
+        name: name,
+        email: email,
+        photo: photo,
+        role: role,
+      };
+      axiosPublic.post("/students", studentInfo).then((res) => {
+      toast.success(`${role} created is successfully`, {
+        position: "top-center",
+      });
+      navigate("/");
+      });
+    })
   };
 
   return (

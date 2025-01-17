@@ -27,7 +27,7 @@ const ReadMorePage = () => {
     sessionDuration,
     registrationFee,
   } = session;
-  const role = "student"
+  const role = "tutor"
   return (
     <div className="my-12">
       <Container>
