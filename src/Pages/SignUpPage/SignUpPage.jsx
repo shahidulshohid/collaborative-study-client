@@ -53,10 +53,14 @@ const SignUpPage = () => {
           photo: photo,
           role: role,
         };
-        })
-        toast.success(`${role} created is successfully`, {
+        // send data to server 
+        axiosPublic.post("/students", studentInfo).then((res) => {
+        toast.success(`created is successfully`, {
           position: "top-center",
         });
+        });
+
+        })
         navigate("/");
       });
   };
@@ -95,9 +99,9 @@ const SignUpPage = () => {
                   Role
                 </label>
                 <select name="role" className="border p-3 rounded-md bg-white">
-                  <option value="Student">Student</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Admin">Admin</option>
+                  <option value="student">Student</option>
+                  <option value="tutor">Tutor</option>
+                  <option value="admin">Admin</option>
                 </select>
               </div>
             </div>

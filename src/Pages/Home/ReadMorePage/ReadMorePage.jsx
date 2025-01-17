@@ -27,6 +27,7 @@ const ReadMorePage = () => {
     sessionDuration,
     registrationFee,
   } = session;
+  const role = "student"
   return (
     <div className="my-12">
       <Container>
@@ -52,8 +53,8 @@ const ReadMorePage = () => {
             <p>
               Class end date: {claEndDate && format(new Date(claEndDate), "P")}
             </p>
-            {/* <p>Registration Fee: {registrationFee}</p> */}
             <p>Session Duration: {sessionDuration}</p>
+            <p>Registration Fee: {registrationFee == 0 ? "Free": registrationFee}</p>
             <p className="text-gray-500">{description}</p>
             <div className="flex items-center gap-1">
               <p className="text-lg">Registration</p>
@@ -67,10 +68,15 @@ const ReadMorePage = () => {
                 ) === 1 ? (
                   <button disabled className="btn text-lg">Closed</button>
                 ) : (
-                  <button className="btn text-lg text-green-500">
-                    Book now
-                  </button>
+                  
+                    role === "admin" || role === "tutor" ? (
+                      <button disabled className="btn text-lg">Book Now</button>
+                    ): (
+                      <button onClick={()=> console.log("clicked")} className="btn text-lg text-green-500">Book Now</button>
+                    )
+                  
                 )}
+                {/* btn text-lg text-green-500 */}
               </p>
             </div>
           </div>

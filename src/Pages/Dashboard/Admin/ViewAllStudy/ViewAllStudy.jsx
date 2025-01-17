@@ -52,7 +52,7 @@ const ViewAllStudy = () => {
                   <td>{item.status}</td>
                   <td className="flex items-center gap-3 md:gap-5">
                     <button onClick={()=>{document.getElementById('my_modal_1').showModal(), setItem(item)}} className="py-1 px-2 bg-blue-500 text-white">Approve</button>
-                    <button onClick={()=> handleRejecting(item._id)} className="py-1 px-3 bg-blue-500 text-white">Reject</button>
+                    <button onClick={()=> handleRejecting(item._id)} className="py-1 px-3 bg-red-400 text-white">Reject</button>
                   </td>
                 </tr>
               ) )

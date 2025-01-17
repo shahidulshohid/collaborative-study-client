@@ -1,89 +1,59 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import logo from "../assets/logo.jpg"
+// import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineLogout } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
+// import { HiOutlineUsers } from "react-icons/hi2";
+// import { CiViewList } from "react-icons/ci";
+import AdminLayout from "./AdminLayout/AdminLayout";
+import StudentLayout from "./StudentLayout/StudentLayout";
+import TutorLayout from "./TutorLayout/TutorLayout";
 // import useAdmin from '../hooks/useAdmin'
 
 const DashboardLayout = () => {
   // TODO: get  isAdmin value from the database
   // const [isAdmin] = useAdmin()
   // console.log(isAdmin)
-  // const isAdmin = true;
+  const role = "admin";
   return (
-    <div className="flex">
+    <div className="md:flex">
       {/* dashboard side bar */}
-      <div className="menu p-4 w-64 min-h-screen bg-gray-100">
+      <div className="hidden md:block menu p-2 md:w-64 lg:w-80 min-h-screen bg-blue-100">
         <ul>
-          {/* {isAdmin ? ( */}
-            <>
-              <li>
-                <NavLink to="/dashboard/adminHome">Admin Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/viewAllUsers">View all users</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/viewAllStudy">
-                  View all study session
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/viewAllMaterial">
-                  View all materials
-                </NavLink>
-              </li>
-            </>
-          {/* ) : ( */}
-            <>
-            {/* tutor routes */}
-              <li>
-                <NavLink to="/">Tutor Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/createStudySession">
-                  Create study session
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/viewAllStudySession">
-                  View all study sessions
-                  {/* created by a tutor  */}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/uploadMaterials">
-                  Upload materials
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/viewAllMaterials">
-                  View all materials
-                </NavLink>
-              </li>
-            </>
-          {/* )} */}
-          {/* shared nav link */}
-          <div className="divider"></div>
-          
+          <li className=" bg-blue-500 rounded-xl">
+            <NavLink to="/">
+            <img className="md:w-6 md:h-6 lg:w-10 lg:h-10 rounded-full" src={logo} alt="" />
+            <p className="md:text-sm lg:text-lg font-semibold text-white">Study Sphere</p>
+            </NavLink>
+          </li>
+          <>
+          {/* admin  */}
+            {(role === "admin") && <AdminLayout></AdminLayout>}
+          </>
+
+          <>
+          {/* tutor */}
+            <TutorLayout></TutorLayout>
+          </>
+
+         <>
           {/* student routes */}
+          <StudentLayout></StudentLayout>
+         </>
+
+          {/* shared */}
+          <div className="divider"></div>
           <li>
-            <NavLink to="/dashboard/studentHome">Student Home</NavLink>
+            <Link to="/" className="lg:text-lg font-semibold">
+              <CgProfile />
+              Profile
+            </Link>
           </li>
           <li>
-            <NavLink to="/dashboard/viewBookSession">
-              View booked session
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/createNote">Create note</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/managePersonalNotes">
-              Manage personal notes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/viewAllMaterials">
-              View all study materials
-              {/* provided by the tutor */}
-            </NavLink>
+            <Link to="/login" className="lg:text-lg font-semibold">
+              <AiOutlineLogout className="mt-1" />
+              Logout
+            </Link>
           </li>
         </ul>
       </div>

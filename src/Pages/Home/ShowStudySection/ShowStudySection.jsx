@@ -40,7 +40,7 @@ const ShowStudySection = () => {
                     new Date(),
                     format(new Date(item.resEndDate), "P")
                   ) === 1 ? (
-                    <button className="btn text-lg text-red-500">Closed</button>
+                    <button disabled className="btn text-lg">Closed</button>
                   ) : (
                     <button className="btn text-lg text-green-500">Ongoing</button>
                   )}

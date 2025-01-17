@@ -1,13 +1,13 @@
+import Container from "../Container/Container"
+import logo from '../../../assets/logo.jpg'
 const Footer = () => {
   return (
-    <footer className="footer bg-base-300 text-base-content p-10">
-      <nav>
-        <h6 className="footer-title">Services</h6>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </nav>
+    <div className="pb-12">
+      <Container>
+    <footer className="footer bg-blue-500 text-base-content p-10">
+      <div>
+        <img src={logo} alt="" />
+      </div>
       <nav>
         <h6 className="footer-title">Company</h6>
         <a className="link link-hover">About us</a>
@@ -54,6 +54,8 @@ const Footer = () => {
         </div>
       </nav>
     </footer>
+      </Container>
+      </div>
   );
 };
 

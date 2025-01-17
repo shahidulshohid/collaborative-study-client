@@ -14,12 +14,13 @@ const ViewAllStudyModal = ({item}) => {
         if(sessionType === "paid" && amount <= 0) {
             return toast.error('Please specify a valid amount for a paid session.')
         }
-        if(sessionType === "free"){
+        if(sessionType === "free" && amount > 0){
             // setFree(true)
             setAmount(0)
+            return toast.error('No need any amount for a free session.')
         }
-        // console.log(sessionType)
-        // console.log(amount)
+        console.log(sessionType)
+        console.log(amount)
 
 
         // sending data to database after updating
@@ -27,6 +28,7 @@ const ViewAllStudyModal = ({item}) => {
         axiosSecure.patch(`/studySessionsAll/${_id}`, updateData)
         .then(data =>{
             toast.success('Session approved is successfully')
+            
         })
     }
     
