@@ -9,6 +9,7 @@ import ReadMorePage from "../Pages/Home/ReadMorePage/ReadMorePage"
 import PrivateRoute from "./PrivateRoute";
 import ViewAllStudy from "../Pages/Dashboard/Admin/ViewAllStudy/ViewAllStudy";
 import ViewBookSession from "../Pages/Dashboard/Students/ViewBookSession/ViewBookSession";
+import ViewAllUsers from "../Pages/Dashboard/Admin/ViewAllUsers/ViewAllUsers";
 
 export const router = createBrowserRouter([
     {
@@ -37,17 +38,20 @@ export const router = createBrowserRouter([
         path:'dashboard',
         element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
-            //tutor routes
-            {
-                path:'createStudySession',
-                element:<CreateStudySession></CreateStudySession>
-            },
-
-
             // admin routes 
             {
                 path:'viewAllStudy',
                 element:<ViewAllStudy></ViewAllStudy>
+            },
+            {
+                path:'viewAllUsers',
+                element:<ViewAllUsers></ViewAllUsers>
+            },
+
+            //tutor routes
+            {
+                path:'createStudySession',
+                element:<CreateStudySession></CreateStudySession>
             },
 
             //students routes
