@@ -1,30 +1,35 @@
 import { CiViewList } from "react-icons/ci";
 import { HiOutlineUsers } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
+import { TfiHome } from "react-icons/tfi";
+import { SiGooglestreetview } from "react-icons/si";
 
 const AdminLayout = () => {
     return (
         <div>
             <li>
-              <NavLink to="/dashboard/viewAllUsers" className=" lg:text-lg font-semibold">
+              <NavLink to="/dashboard/adminHome" className="font-semibold text-white hover:bg-gray-800 my-1">
+              <TfiHome />
+                Tutor Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/viewAllUsers" className="font-semibold text-white hover:bg-gray-800 my-1">
                 <HiOutlineUsers />
                 View all users
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/viewAllStudy" className="lg:text-lg font-semibold">
+              <NavLink to="/dashboard/viewAllStudy" className="font-semibold text-white hover:bg-gray-800 my-1">
                 <CiViewList />
                 View all study session
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/dashboard/viewAllMaterial"
-                className="lg:text-lg font-semibold"
+                to="/dashboard/viewAllMaterial" className="font-semibold text-white hover:bg-gray-800 my-1"
               >
-                <CiViewList />
-
-                View all materials
+                <SiGooglestreetview /> View all materials
               </NavLink>
             </li>
         </div>

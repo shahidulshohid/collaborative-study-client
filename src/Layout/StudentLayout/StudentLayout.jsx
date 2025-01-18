@@ -1,27 +1,32 @@
 import { NavLink } from "react-router-dom";
+import { BsBook } from "react-icons/bs";
+import { FaRegEdit } from "react-icons/fa";
+import { MdFormatListBulleted } from "react-icons/md";
+import { MdViewInAr } from "react-icons/md";
+import { TfiHome } from "react-icons/tfi";
 
 const StudentLayout = () => {
     return (
         <div>
             <li>
-            <NavLink to="/dashboard/studentHome">Student Home</NavLink>
+            <NavLink to="/dashboard/studentHome" className="font-semibold text-white hover:bg-gray-800 my-1"><TfiHome /> Student Home</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/viewBookSession" className="lg:text-lg font-semibold">
-              View booked session
+            <NavLink to="/dashboard/viewBookSession" className="font-semibold text-white hover:bg-gray-800 my-1">
+            <BsBook /> View booked session
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/createNote" className="lg:text-lg font-semibold">Create note</NavLink>
+            <NavLink to="/dashboard/createNote" className="font-semibold text-white hover:bg-gray-800 my-1"><FaRegEdit /> Create note</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/managePersonalNotes" className="lg:text-lg font-semibold">
-              Manage personal notes
+            <NavLink to="/dashboard/managePersonalNotes" className="font-semibold text-white hover:bg-gray-800 my-1">
+            <MdFormatListBulleted /> Manage personal notes
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/viewAllMaterials" className="lg:text-lg font-semibold">
-              View all study materials
+            <NavLink to="/dashboard/viewAllMaterials" className="font-semibold text-white hover:bg-gray-800 my-1">
+            <MdViewInAr /> View all study materials
             </NavLink>
           </li>
         </div>

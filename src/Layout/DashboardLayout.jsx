@@ -13,9 +13,9 @@ const DashboardLayout = () => {
   return (
     <div className="md:flex">
       {/* dashboard side bar */}
-      <div className="hidden md:block menu p-2 md:w-64 lg:w-80 min-h-screen bg-blue-100">
+      <div className="hidden md:block menu p-2 md:w-64 lg:w-80 min-h-screen bg-blue-500">
         <ul>
-          <li className=" bg-blue-500 rounded-xl">
+          <li className=" bg-blue-500 rounded-xl mb-2">
             <NavLink to="/">
             <img className="md:w-6 md:h-6 lg:w-10 lg:h-10 rounded-full" src={logo} alt="" />
             <p className="md:text-sm lg:text-lg font-semibold text-white">Study Sphere</p>
@@ -48,15 +48,15 @@ const DashboardLayout = () => {
            }
 
           {/* shared */}
-          <div className="divider"></div>
+          <div className="border-t-2"></div>
           <li>
-            <Link to="/" className="lg:text-lg font-semibold">
+            <Link to="/" className="font-semibold text-white hover:bg-gray-800 my-1">
               <CgProfile />
               Profile
             </Link>
           </li>
           <li>
-            <Link to="/login" className="lg:text-lg font-semibold">
+            <Link to="/login" className="font-semibold text-white hover:bg-gray-800 my-1">
               <AiOutlineLogout className="mt-1" />
               Logout
             </Link>

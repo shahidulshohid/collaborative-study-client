@@ -13,6 +13,7 @@ import ViewAllUsers from "../Pages/Dashboard/Admin/ViewAllUsers/ViewAllUsers";
 import AdminRoute from "./AdminRoute";
 import TutorRoute from "./TutorRoute";
 import PaymentPage from "../Pages/Home/Home/PaymentPage/PaymentPage";
+import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
 
 export const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
             },
 
             //students routes
+            {
+                path:'studentHome',
+                element:<StudentHome></StudentHome>
+            },
             {
                 path:'viewBookSession',
                 element:<PrivateRoute><ViewBookSession></ViewBookSession></PrivateRoute>

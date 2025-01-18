@@ -9,8 +9,8 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const ReadMorePage = () => {
-  const {user} = useAuth()
-  const [role] = useAdmin()
+  const { user } = useAuth();
+  const [role] = useAdmin();
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
   const { data: session = {} } = useQuery({
@@ -35,28 +35,37 @@ const ReadMorePage = () => {
     tutorEmail,
   } = session;
 
-  // for session booked 
+  // for session booked
   const handleSessionBooked = (id) => {
     const freeBookedSession = {
-      studentEmail:user?.email,
-      studySessionId:_id,
-      tutorEmail:tutorEmail,
-    }
-    axiosSecure.post(`/bookedSession/${id}`, freeBookedSession)
-    .then(res => {
-      if(res.data.insertedId){
+      studentEmail: user?.email,
+      studySessionId: _id,
+      image,
+      title,
+      tutorName,
+      description,
+      resStartDate,
+      resEndDate,
+      claStartDate,
+      claEndDate,
+      sessionDuration,
+      registrationFee,
+      tutorEmail,
+    };
+    axiosSecure.post("/bookedSession", freeBookedSession).then((res) => {
+      if (res.data.insertedId) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Booked Session",
+          title: "Booked session is successfully by free",
           showConfirmButton: false,
-          timer: 1500
+          timer: 1500,
         });
       }
-    })
-  }
+    });
+  };
   return (
-    <div className="my-12">
+    <div className="mt-12">
       <Container>
         <div className="md:flex gap-10">
           <div className="mb-5 md:mb-0">
@@ -66,26 +75,30 @@ const ReadMorePage = () => {
             <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
             <h4 className="text-xl font-semibold">Tutor Name: {tutorName}</h4>
             <div className="flex items-center gap-12">
-            <p>
-              Registration start date: {" "}
-              {resStartDate && format(new Date(resStartDate), "P")}
-            </p>
-            <p>
-              Registration end date:{" "}
-              {resEndDate && format(new Date(resEndDate), "P")}
-            </p>
+              <p>
+                Registration start date:{" "}
+                {resStartDate && format(new Date(resStartDate), "P")}
+              </p>
+              <p>
+                Registration end date:{" "}
+                {resEndDate && format(new Date(resEndDate), "P")}
+              </p>
             </div>
             <div className="flex gap-24">
-            <p>
-              Class start date:{" "}
-              {claStartDate && format(new Date(claStartDate), "P")}
-            </p>
-            <p>
-              Class end date: {claEndDate && format(new Date(claEndDate), "P")}
-            </p>
+              <p>
+                Class start date:{" "}
+                {claStartDate && format(new Date(claStartDate), "P")}
+              </p>
+              <p>
+                Class end date:{" "}
+                {claEndDate && format(new Date(claEndDate), "P")}
+              </p>
             </div>
             <p>Session Duration: {sessionDuration}</p>
-            <p>Registration Fee: {registrationFee == 0 ? "Free": registrationFee}</p>
+            <p>
+              Registration Fee:{" "}
+              {registrationFee == 0 ? "Free" : registrationFee}
+            </p>
             <p className="text-gray-500">{description}</p>
             <div className="flex items-center gap-1">
               <p className="text-lg">Registration</p>
@@ -93,21 +106,29 @@ const ReadMorePage = () => {
                 <HiOutlineArrowNarrowRight className="w-8 mt-1" />
               </p>
               <p>
-                {resEndDate &&compareAsc(
-                  new Date(),
-                  format(new Date(resEndDate), "P")
-                ) === 1 ? (
-                  <button disabled className="btn text-lg">Closed</button>
+                {resEndDate &&
+                compareAsc(new Date(), format(new Date(resEndDate), "P")) ===
+                  1 ? (
+                  <button disabled className="btn text-lg">
+                    Closed
+                  </button>
+                ) : role === "admin" || role === "tutor" ? (
+                  <button disabled className="btn text-lg">
+                    Book Now
+                  </button>
+                ) : registrationFee === 0 ? (
+                  <button
+                    onClick={handleSessionBooked}
+                    className="btn text-lg text-green-500"
+                  >
+                    Book Now
+                  </button>
                 ) : (
-                  
-                    role === "admin" || role === "tutor" ? (
-                      <button disabled className="btn text-lg">Book Now</button>
-                    ): (
-                        registrationFee === 0 ?(<button onClick={()=>handleSessionBooked(_id)} className="btn text-lg text-green-500">Book Now</button>) : (
-                          <Link to={`/dashboard/paymentPage/${_id}`}><button className="btn text-lg text-green-500">Book Now</button></Link>
-                        )
-                    )
-                  
+                  <Link to={`/dashboard/paymentPage/${_id}`}>
+                    <button className="btn text-lg text-green-500">
+                      Book Now
+                    </button>
+                  </Link>
                 )}
               </p>
             </div>
