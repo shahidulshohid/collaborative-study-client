@@ -1,20 +1,15 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.jpg"
-// import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineLogout } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
-// import { HiOutlineUsers } from "react-icons/hi2";
-// import { CiViewList } from "react-icons/ci";
 import AdminLayout from "./AdminLayout/AdminLayout";
 import StudentLayout from "./StudentLayout/StudentLayout";
 import TutorLayout from "./TutorLayout/TutorLayout";
-// import useAdmin from '../hooks/useAdmin'
+import useAdmin from "../Hooks/useAdmin";
 
 const DashboardLayout = () => {
-  // TODO: get  isAdmin value from the database
-  // const [isAdmin] = useAdmin()
-  // console.log(isAdmin)
-  const role = "admin";
+  const [role] = useAdmin()
+  console.log(role)
   return (
     <div className="md:flex">
       {/* dashboard side bar */}
@@ -26,20 +21,31 @@ const DashboardLayout = () => {
             <p className="md:text-sm lg:text-lg font-semibold text-white">Study Sphere</p>
             </NavLink>
           </li>
-          <>
-          {/* admin  */}
-            {(role === "admin") && <AdminLayout></AdminLayout>}
-          </>
-
-          <>
-          {/* tutor */}
-            <TutorLayout></TutorLayout>
-          </>
-
-         <>
+          
+              {/* admin  */}
+             {
+              role === "admin" && <>
+                <AdminLayout></AdminLayout>
+              </>
+             }
+             
+                {/* tutor */}
+              {
+                role === "tutor" && (
+                  <>
+                  <TutorLayout></TutorLayout>
+                </>
+                )
+              }
+            
           {/* student routes */}
-          <StudentLayout></StudentLayout>
-         </>
+           {
+            role === "student" && (
+              <>
+              <StudentLayout></StudentLayout>
+             </>
+            )
+           }
 
           {/* shared */}
           <div className="divider"></div>
