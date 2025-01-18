@@ -10,6 +10,9 @@ import PrivateRoute from "./PrivateRoute";
 import ViewAllStudy from "../Pages/Dashboard/Admin/ViewAllStudy/ViewAllStudy";
 import ViewBookSession from "../Pages/Dashboard/Students/ViewBookSession/ViewBookSession";
 import ViewAllUsers from "../Pages/Dashboard/Admin/ViewAllUsers/ViewAllUsers";
+import AdminRoute from "./AdminRoute";
+import TutorRoute from "./TutorRoute";
+import PaymentPage from "../Pages/Home/Home/PaymentPage/PaymentPage";
 
 export const router = createBrowserRouter([
     {
@@ -41,23 +44,28 @@ export const router = createBrowserRouter([
             // admin routes 
             {
                 path:'viewAllStudy',
-                element:<ViewAllStudy></ViewAllStudy>
+                element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
             },
             {
                 path:'viewAllUsers',
-                element:<ViewAllUsers></ViewAllUsers>
+                element:<PrivateRoute><AdminRoute><ViewAllUsers></ViewAllUsers></AdminRoute></PrivateRoute>
             },
 
             //tutor routes
             {
                 path:'createStudySession',
-                element:<CreateStudySession></CreateStudySession>
+                element:<PrivateRoute><TutorRoute><CreateStudySession></CreateStudySession></TutorRoute></PrivateRoute>
             },
 
             //students routes
             {
                 path:'viewBookSession',
-                element:<ViewBookSession></ViewBookSession>
+                element:<PrivateRoute><ViewBookSession></ViewBookSession></PrivateRoute>
+            },
+            
+            {
+                path:'paymentPage/:id',
+                element: <PaymentPage></PaymentPage>
             }
         ]
     }
