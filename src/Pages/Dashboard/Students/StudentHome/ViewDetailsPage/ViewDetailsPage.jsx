@@ -3,6 +3,7 @@ import useAxiosPublic from "../../../../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import { format } from "date-fns";
 import useAuth from "../../../../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const ViewDetailsPage = () => {
   const { user } = useAuth();
@@ -29,11 +30,33 @@ const ViewDetailsPage = () => {
     registrationFee,
     tutorEmail,
     studentEmail,
+    studySessionId,
   } = session;
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log('lklkj')
+    const form = e.target
+    const review = form.review.value
+    const rating = form.rating.value
+    const reviewData = {
+      review, 
+      rating,
+      studentEmail: user?.displayName,
+      studentEmail: user?.email,
+      studySessionId,
+    }
+    axiosPublic.post('/review', reviewData)
+    .then(res => {
+      if(res.data.insertedId){
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Review and Rating added successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    })
   }
   return (
     <div className="mb-12">
