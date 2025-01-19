@@ -15,6 +15,7 @@ import TutorRoute from "./TutorRoute";
 import PaymentPage from "../Pages/Home/Home/PaymentPage/PaymentPage";
 import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
 import ViewDetailsPage from "../Pages/Dashboard/Students/StudentHome/ViewDetailsPage/ViewDetailsPage";
+import CreateNote from "../Pages/Dashboard/Students/CreateNote/CreateNote";
 
 export const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
             {
                 path:'viewDetails/:id',
                 element: <PrivateRoute><ViewDetailsPage></ViewDetailsPage></PrivateRoute>
+            },
+            {
+                path:'createNote',
+                element:<PrivateRoute><CreateNote></CreateNote></PrivateRoute>
             }
         ]
     }

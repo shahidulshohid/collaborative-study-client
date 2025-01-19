@@ -45,7 +45,7 @@ const ViewDetailsPage = () => {
       studentEmail: user?.email,
       studySessionId,
     }
-    axiosPublic.post('/review', reviewData)
+    axiosPublic.post('/reviews', reviewData)
     .then(res => {
       if(res.data.insertedId){
         Swal.fire({
@@ -124,7 +124,7 @@ const ViewDetailsPage = () => {
               discussions made it truly memorable.
             </p>
           </div>
-          <div className="bg-blue-300 px-3 py-5 md:px-5 md:py-8 rounded-lg">
+          <div className="bg-[#d0e293] px-3 py-5 md:px-5 md:py-8 rounded-lg">
             <form onSubmit={handleSubmit}>
               <div>
                 <label>Student Name</label>
@@ -167,7 +167,7 @@ const ViewDetailsPage = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 px-4 py-2 rounded-lg text-white font-semibold mt-3"
+                  className="bg-blue-500 px-4 py-2 rounded-lg text-white font-semibold mt-3 hover:bg-blue-600"
                 >
                   Send Review & Rating
                 </button>
