@@ -94,9 +94,9 @@ const ReadMorePage = () => {
                 {claEndDate && format(new Date(claEndDate), "P")}
               </p>
             </div>
-            <p>Session Duration: {sessionDuration}</p>
+            <p>Session Duration: {sessionDuration} hours</p>
             <p>
-              Registration Fee:{" "}
+              Registration Fee:{" "} $
               {registrationFee == 0 ? "Free" : registrationFee}
             </p>
             <p className="text-gray-500">{description}</p>

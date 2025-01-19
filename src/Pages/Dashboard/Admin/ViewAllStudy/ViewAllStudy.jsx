@@ -50,7 +50,7 @@ const ViewAllStudy = () => {
             <tr>
               <th></th>
               <th>Title</th>
-              {/* <th>Registration Fee</th> */}
+              <th>Registration Fee</th>
               <th>Tutor Name</th>
               <th>Status</th>
               <th>Action</th>
@@ -61,7 +61,7 @@ const ViewAllStudy = () => {
               <tr key={item._id}>
                 <th></th>
                 <td>{item.title}</td>
-                {/* <td>{item.registrationFee}</td> */}
+                <td>{item.registrationFee}</td>
                 <td>{item.tutorName}</td>
                 <td>{item.status}</td>
                 <td className="flex items-center gap-3 md:gap-5">
@@ -86,7 +86,7 @@ const ViewAllStudy = () => {
           </tbody>
         </table>
       </div>
-      <ViewAllStudyModal item={item}></ViewAllStudyModal>
+      <ViewAllStudyModal item={item} refetch={refetch}></ViewAllStudyModal>
     </div>
   );
 };

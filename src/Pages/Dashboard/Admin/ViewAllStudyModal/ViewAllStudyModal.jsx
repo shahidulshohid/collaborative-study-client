@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
-const ViewAllStudyModal = ({item}) => {
+const ViewAllStudyModal = ({item, refetch}) => {
     const {registrationFee, _id} = item
     console.log(registrationFee)
     const [sessionType, setSessionType] = useState('free')
@@ -28,7 +28,8 @@ const ViewAllStudyModal = ({item}) => {
         axiosSecure.patch(`/studySessionsAll/${_id}`, updateData)
         .then(data =>{
             toast.success('Session approved is successfully')
-            
+            my_modal_1.close()
+            refetch()
         })
     }
     
