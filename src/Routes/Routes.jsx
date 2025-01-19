@@ -27,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path:'/readMore/:id',
                 element:<PrivateRoute><ReadMorePage></ReadMorePage></PrivateRoute>
+            },
+            {
+                path:'paymentPage/:id',
+                element: <PaymentPage></PaymentPage>
             }
         ]
     },
@@ -68,10 +72,10 @@ export const router = createBrowserRouter([
                 element:<PrivateRoute><ViewBookSession></ViewBookSession></PrivateRoute>
             },
             
-            {
-                path:'paymentPage/:id',
-                element: <PaymentPage></PaymentPage>
-            }
+            // {
+            //     path:'paymentPage/:id',
+            //     element: <PaymentPage></PaymentPage>
+            // }
         ]
     }
 ])

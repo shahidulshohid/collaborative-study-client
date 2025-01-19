@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Container from "../../Shared/Container/Container";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
@@ -9,6 +9,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const ReadMorePage = () => {
+  const navigate = useNavigate()
   const { user } = useAuth();
   const [role] = useAdmin();
   const { id } = useParams();
@@ -55,12 +56,11 @@ const ReadMorePage = () => {
     axiosSecure.post("/bookedSession", freeBookedSession).then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
-          position: "top-end",
           icon: "success",
-          title: "Booked session is successfully by free",
-          showConfirmButton: false,
-          timer: 1500,
+          title: "Payment Successful",
+          text: "Your payment has been processed successfully!",
         });
+        navigate('/dashboard/viewBookSession')
       }
     });
   };
@@ -124,7 +124,7 @@ const ReadMorePage = () => {
                     Book Now
                   </button>
                 ) : (
-                  <Link to={`/dashboard/paymentPage/${_id}`}>
+                  <Link to={`/paymentPage/${_id}`}>
                     <button className="btn text-lg text-green-500">
                       Book Now
                     </button>
