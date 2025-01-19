@@ -3,7 +3,6 @@ import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import useAdmin from "../../../../Hooks/useAdmin";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
-// import { Helmet } from 'react-helmet-async'
 
 const ViewBookSession = () => {
     const {role} = useAdmin()
@@ -18,9 +17,6 @@ const ViewBookSession = () => {
 
     return (
         <div>
-            {/* <Helmet>
-                <title>ldkflsk</title>
-            </Helmet> */}
             <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">View Your Booked Study Sessions</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {

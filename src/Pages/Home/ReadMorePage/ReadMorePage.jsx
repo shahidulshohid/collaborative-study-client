@@ -37,7 +37,7 @@ const ReadMorePage = () => {
   } = session;
 
   // for session booked
-  const handleSessionBooked = (id) => {
+  const handleSessionBooked = () => {
     const freeBookedSession = {
       studentEmail: user?.email,
       studySessionId: _id,

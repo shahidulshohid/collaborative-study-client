@@ -2,7 +2,7 @@ import Container from "../Container/Container"
 import logo from '../../../assets/logo.jpg'
 const Footer = () => {
   return (
-    <div className="pb-12">
+    <div className="my-12">
       <Container>
     <footer className="footer bg-blue-500 text-base-content p-10">
       <div>
