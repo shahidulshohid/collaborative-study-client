@@ -13,7 +13,6 @@ const ViewBookSession = () => {
         queryKey:['session', user?.email],
         queryFn: async () => {
             const res = await axiosPublic.get(`/bookedSessions/${user?.email}`)
-            console.log(res.data)
             return res.data
         }
     })
@@ -46,3 +45,4 @@ const ViewBookSession = () => {
 };
 
 export default ViewBookSession;
+

@@ -33,7 +33,6 @@ const ViewAllStudyModal = ({item, refetch}) => {
         })
     }
     
-    // console.log(item)
   return (
     <dialog id="my_modal_1" className="modal">
       <div className="modal-box">

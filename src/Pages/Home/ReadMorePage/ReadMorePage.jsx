@@ -21,6 +21,17 @@ const ReadMorePage = () => {
       return res?.data;
     },
   });
+
+  //get data form reviews
+  const {data:reviews = []} = useQuery({
+    queryKey:['reviews'],
+    queryFn: async ()=> {
+      const res =await axiosSecure('/reviews')
+      return res.data 
+    }
+  })
+  console.log(reviews)
+
   const {
     image,
     title,
@@ -64,6 +75,9 @@ const ReadMorePage = () => {
       }
     });
   };
+
+  // filter all review data from study session by session id 
+  const filterReviews = reviews?.filter(review => review.studySessionId == _id)
   return (
     <div className="mt-12">
       <Container>
@@ -99,6 +113,16 @@ const ReadMorePage = () => {
               Registration Fee:{" "} $
               {registrationFee == 0 ? "Free" : registrationFee}
             </p>
+            {
+              filterReviews?.map(review => (
+                <div key={review._id}>
+                  <p className="font-semibold">Review: {review.review}</p>
+                  <p className="font-semibold">Rating: {review.rating}</p>
+                  </div>
+              ))
+            }
+            
+
             <p className="text-gray-500">{description}</p>
             <div className="flex items-center gap-1">
               <p className="text-lg">Registration</p>

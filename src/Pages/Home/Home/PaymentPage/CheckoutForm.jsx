@@ -90,16 +90,17 @@ const CheckoutForm = ({ handleSessionBooked }) => {
   return (
     <div className="max-w-3xl mx-auto mt-20">
       <Container>
-        <h1 className="text-xl md:text-3xl font-semibold text-center mb-12">
+        <h1 className="text-xl md:text-3xl font-semibold text-center">
           Payment
         </h1>
-        <div className="md:flex items-center gap-5">
+        <p className=" mb-12 text-center">Secure and seamless payment processing for a hassle-free experience</p>
+        <div className="md:flex items-center gap-5 lg:gap-12">
           <div className="flex-1 mb-5 md:mb-0">
             <img src={image} alt="" />
             <h3 className="text-xl font-semibold mt-2">{title}</h3>
           </div>
           <div className="flex-1">
-            <h3 className="text-xl font-semibold mb-3">You have to payment ${registrationFee}</h3>
+            <h3 className="text-lg font-semibold mb-3">${registrationFee} Will be deducted from your card</h3>
           <form onSubmit={handleSubmit}>
           <CardElement
             options={{
