@@ -34,7 +34,7 @@ const ViewBookSession = () => {
                             <div>
                                 <h3 className="text-xl font-semibold mt-2">{item.title}</h3>
                                 <p className="mb-2">{item.description.substring(0,50)}...</p>
-                                <Link to={`/dashboard/viewDetails/${item._id}`}><button className="flex items-center gap-1 px-3 py-1 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600">View Details
+                                <Link to={`/dashboard/viewDetails/${item._id}`}><button className="flex items-center gap-1 px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600">View Details
                                 <IoIosArrowRoundForward className="mt-1 text-lg" /></button></Link>
                             </div>
                         </div>

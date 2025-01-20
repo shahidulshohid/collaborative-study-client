@@ -24,6 +24,21 @@ const ManagePersonalNode = () => {
         notes with a simple and intuitive interface tailored for effective
         learning
       </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {
+            notes?.map(note => (
+                <div key={note._id} className="text-center bg-base-200 py-5 px-5">
+                    <h3 className="text-lg font-semibold">Student Account</h3>
+                    <h4 className="font-semibold">{note.studentEmail}</h4>
+                    <p>{note.description}</p>
+                    <div className="flex justify-center items-center gap-5 mt-2">
+                        <button className="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold">Update</button>
+                        <button className="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold">Delete</button>
+                    </div>
+                </div>
+            ))
+        }
+      </div>
     </div>
   );
 };
