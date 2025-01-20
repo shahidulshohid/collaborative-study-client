@@ -18,6 +18,7 @@ import ViewDetailsPage from "../Pages/Dashboard/Students/StudentHome/ViewDetails
 import CreateNote from "../Pages/Dashboard/Students/CreateNote/CreateNote";
 import ManagePersonalNode from "../Pages/Dashboard/Students/ManagePersonalNote/ManagePersonalNode";
 import UpdatePersonalNotes from "../Pages/Dashboard/Students/UpdatePersonalNotes/UpdatePersonalNotes";
+import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAllStudyTutor";
 
 export const router = createBrowserRouter([
     {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path:'createStudySession',
                 element:<PrivateRoute><TutorRoute><CreateStudySession></CreateStudySession></TutorRoute></PrivateRoute>
+            },
+            {
+                path:'viewAllStudyTutor',
+                element:<PrivateRoute><TutorRoute><ViewAllStudyTutor></ViewAllStudyTutor></TutorRoute></PrivateRoute>
             },
 
             //students routes

@@ -2,6 +2,8 @@ import React from "react";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { FaRegEdit } from "react-icons/fa";
+import { MdOutlineDelete } from "react-icons/md";
 
 const ViewAllUsers = () => {
   const axiosSecure = useAxiosSecure();
@@ -12,6 +14,8 @@ const ViewAllUsers = () => {
       return res.data;
     },
   });
+
+  console.log(users);
 
   const handleDelete = async (id) => {
     Swal.fire({
@@ -64,43 +68,45 @@ const ViewAllUsers = () => {
         <h2 className="text-xl md:text-3xl">Total Users: {users.length}</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="table tatext-xl md:ble-zebra">
+        <table className="table md:ble-zebra">
           {/* head */}
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              {/* <th>Email</th> */}
-              <th>Role</th>
-              <th>Action</th>
+              <th className="text-lg">Image</th>
+              <th className="text-lg hidden md:block">Email</th>
+              <th className="text-lg">Role</th>
+              <th className="text-lg">Action</th>
             </tr>
           </thead>
           <tbody>
             {users?.map((user, index) => (
               <tr key={user._id}>
-                <th>{index + 1}</th>
-                <th>{user.name}</th>
-                {/* <td>{user.email}</td> */}
+                <th></th>
+                <th>
+                  <img
+                    className="w-14 h-14 rounded-full object-cover"
+                    src={user.photo}
+                    alt=""
+                  />
+                </th>
+                <td className="hidden md:block">{user.email}</td>
                 <td>{user.role}</td>
                 <td>
                   <div className="flex gap-3">
-                    {user?.role === "admin" ? (
-                      <button className="bg-blue-500 px-7 py-1 text-white">Admin</button>
-                    ) : (
-                      <button
-                        onClick={() => {
-                          handleMakeAdmin(user);
-                        }}
-                        className="bg-blue-500 px-2 py-1 text-white"
-                      >
-                        Update Role
-                      </button>
-                    )}
+                    <button
+                      onClick={() => {
+                        handleMakeAdmin(user);
+                      }}
+                      className="bg-blue-500 px-2 md:px-4 py-1 rounded-lg text-white"
+                    >
+                      <FaRegEdit size={20}/>
+                    </button>
                     <button
                       onClick={() => handleDelete(user._id)}
-                      className="bg-red-400 px-2 py-1 text-white"
+                      className="bg-red-400 px-2 md:px-4 py-1 text-white rounded-lg"
                     >
-                      Delete
+                      <MdOutlineDelete size={25} />
                     </button>
                   </div>
                 </td>

@@ -58,10 +58,11 @@ const CreateStudySession = () => {
   };
 
   return (
-    <div className="mx-4 lg:mx-0 p-3 lg:p-5">
-      <h3 className="text-center mb-3 text-2xl md:text-3xl">
+    <div className="mx-4 lg:mx-0">
+      <h3 className="text-center mb-5 text-2xl md:text-3xl font-semibold">
         Create study session
       </h3>
+      <div className="bg-[#d0e293] px-5 lg:px-8 py-6">
       <form onSubmit={handleCreateSessionForm}>
         {/* first title and description */}
         <div className="lg:flex gap-3 mb-3">
@@ -217,6 +218,7 @@ const CreateStudySession = () => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };

@@ -20,7 +20,7 @@ const TutorLayout = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/viewAllStudySession" className="font-semibold text-white hover:bg-gray-800 my-1">
+              <NavLink to="/dashboard/viewAllStudyTutor" className="font-semibold text-white hover:bg-gray-800 my-1">
               <RiFileListLine />View all study sessions
                 {/* created by a tutor  */}
               </NavLink>

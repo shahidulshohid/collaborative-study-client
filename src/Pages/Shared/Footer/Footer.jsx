@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <div className="my-12">
       <Container>
-    <footer className="footer bg-blue-500 text-base-content p-10">
+    <footer className="footer bg-gray-800 text-base-content p-10">
       <div>
-        <img src={logo} alt="" />
+        <img className="w-12 h-12 rounded-full" src={logo} alt="" />
       </div>
       <nav>
         <h6 className="footer-title">Company</h6>
