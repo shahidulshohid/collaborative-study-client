@@ -3,21 +3,29 @@ import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import useAdmin from "../../../../Hooks/useAdmin";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import useAuth from "../../../../Hooks/useAuth";
 
 const ViewBookSession = () => {
+    const {user} = useAuth()
     const {role} = useAdmin()
     const axiosPublic = useAxiosPublic()
     const {data:session = []} = useQuery({
-        queryKey:['session'],
+        queryKey:['session', user?.email],
         queryFn: async () => {
-            const res = await axiosPublic.get('/bookedSession')
+            const res = await axiosPublic.get(`/bookedSessions/${user?.email}`)
+            console.log(res.data)
             return res.data
         }
     })
 
     return (
         <div>
-            <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">View Your Booked Study Sessions</h3>
+            <div className=" mb-5">
+            <h3 className="text-center text-2xl md:text-3xl font-semibold">View Your Booked Study Sessions</h3>
+            <p className="max-w-2xl mx-auto text-center">
+            View Your Booked Study Sessions" allows users to see all their scheduled study sessions in one place. It provides session details, including date, time, subject, and tutor, ensuring easy access and organization.
+            </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                     session?.map((item => (

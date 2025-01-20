@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 
@@ -26,9 +27,15 @@ const CreateNote = () => {
   };
   return (
     <div>
-      <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">
-        Create Your Note
+      <h3 className="text-center text-2xl md:text-3xl font-semibold">
+        Create Your Personal Notes
       </h3>
+      <p className="max-w-2xl mx-auto text-center mb-5">
+        Create Your Personal Notes allows students to organize their thoughts,
+        study materials, or reminders in one place. Easily save and manage your
+        notes with a simple and intuitive interface tailored for effective
+        learning
+      </p>
       <div className="bg-[#d0e293] px-3 py-5 md:px-5 md:py-8 rounded-lg w-3/4 mx-auto">
         <form onSubmit={handleNoteSubmit}>
           <div>
@@ -43,10 +50,10 @@ const CreateNote = () => {
           </div>
           <div>
             <label>Note Title</label>
-            <textarea
+            <input
               type="text"
               name="title"
-              placeholder="title"
+              placeholder="Title"
               className="input w-full input-bordered mt-1"
             />
           </div>
