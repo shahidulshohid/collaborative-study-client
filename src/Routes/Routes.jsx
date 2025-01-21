@@ -19,6 +19,7 @@ import CreateNote from "../Pages/Dashboard/Students/CreateNote/CreateNote";
 import ManagePersonalNode from "../Pages/Dashboard/Students/ManagePersonalNote/ManagePersonalNode";
 import UpdatePersonalNotes from "../Pages/Dashboard/Students/UpdatePersonalNotes/UpdatePersonalNotes";
 import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAllStudyTutor";
+import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
 
             //tutor routes
             {
+                index:true,
+                element:<TutorHome></TutorHome>
+            },
+            {
                 path:'createStudySession',
                 element:<PrivateRoute><TutorRoute><CreateStudySession></CreateStudySession></TutorRoute></PrivateRoute>
             },
@@ -73,7 +78,7 @@ export const router = createBrowserRouter([
 
             //students routes
             {
-                path:'studentHome',
+                index:true,
                 element:<StudentHome></StudentHome>
             },
             {

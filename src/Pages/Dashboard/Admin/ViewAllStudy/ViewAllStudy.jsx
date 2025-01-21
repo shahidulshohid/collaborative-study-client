@@ -70,13 +70,13 @@ const ViewAllStudy = () => {
                       document.getElementById("my_modal_1").showModal(),
                         setItem(item);
                     }}
-                    className="py-1 px-2 bg-blue-500 text-white"
+                    className="py-1 px-2 bg-blue-500 text-white font-semibold rounded-lg"
                   >
                     Approve
                   </button>
                   <button
                     onClick={() => handleRejecting(item._id)}
-                    className="py-1 px-3 bg-red-400 text-white"
+                    className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
                   >
                     Reject
                   </button>
