@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { MdOutlineDelete } from "react-icons/md";
 import { useState } from "react";
+import LoadingSection from "../../../Shared/LoadingSection/LoadingSection";
 
 const ViewAllUsers = () => {
   const [search, setSearch] = useState("");
@@ -64,6 +65,7 @@ const ViewAllUsers = () => {
     setSearch('')
   }
 
+
   return (
     <div>
       <div className="flex justify-evenly my-4">
@@ -71,7 +73,7 @@ const ViewAllUsers = () => {
         <h2 className="text-xl md:text-3xl">Total Users: {users.length}</h2>
       </div>
 
-      <div className="flex justify-center my-2 p-1 overflow-hidden focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
+      <div className="flex justify-center mt-3 mb-4 p-1 overflow-hidden focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
         <input
           className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent rounded-l-md border-2"
           type="text"
@@ -93,14 +95,14 @@ const ViewAllUsers = () => {
         </button>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-gray-100 rounded-xl">
         <table className="table md:ble-zebra">
           {/* head */}
           <thead>
             <tr>
               <th></th>
               <th className="text-lg">Image</th>
-              <th className="text-lg">Name</th>
+              <th className="text-lg hidden md:block">Name</th>
               <th className="text-lg">Role</th>
               <th className="text-lg hidden md:block">Email</th>
               <th className="text-lg">Action</th>
@@ -117,13 +119,12 @@ const ViewAllUsers = () => {
                     alt=""
                   />
                 </th>
-                <td className="hidden md:block">{user.name}</td>
-                <td className="uppercase font-semibold">{user.role}</td>
-                <td className="hidden md:block">{user.email}</td>
+                <td className="hidden md:block font-semibold">{user.name}</td>
+                <td className="uppercase font-semibold ">{user.role}</td>
+                <td className="hidden md:block font-semibold">{user.email}</td>
                 <td>
                   <div className="flex gap-3">
                     <div className="bg-blue-500 font-semibold rounded-lg border text-white border-gray-400 px-2 py-1">
-                      <button>Update: </button>
                       <select
                         className="bg-blue-500 text-white"
                         onChange={(e) =>
@@ -131,7 +132,6 @@ const ViewAllUsers = () => {
                         }
                         defaultValue={user.role || " Role update"}
                       >
-                        <option>Role</option>
                         <option value="admin">Admin</option>
                         <option value="tutor">Tutor</option>
                         <option value="student">Student</option>

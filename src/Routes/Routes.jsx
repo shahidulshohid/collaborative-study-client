@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
 
             //tutor routes
             {
-                index:true,
+                path:'tutorHome',
                 element:<TutorHome></TutorHome>
             },
             {
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
 
             //students routes
             {
-                index:true,
+                path:'studentHome',
                 element:<StudentHome></StudentHome>
             },
             {

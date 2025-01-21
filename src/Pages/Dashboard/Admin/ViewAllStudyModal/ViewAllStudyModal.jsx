@@ -63,13 +63,13 @@ const ViewAllStudyModal = ({item, refetch}) => {
                 )
             }
             <div>
-            <button className="bg-blue-500 text-white px-3 py-1 mt-2">Approve</button>
+            <button className="bg-blue-500 text-white px-3 py-1 mt-2 rounded-lg">Approved</button>
             </div>
         </form>
         <div className="modal-action">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
-            <button className="bg-red-400 text-white px-3 py-1 mt-1">Cancel</button>
+            <button className="bg-red-400 text-white px-3 py-1 mt-1 rounded-lg">Cancel</button>
           </form>
         </div>
       </div>

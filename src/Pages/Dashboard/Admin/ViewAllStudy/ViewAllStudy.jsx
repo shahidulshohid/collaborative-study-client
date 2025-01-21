@@ -43,27 +43,27 @@ const ViewAllStudy = () => {
       <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">
         View All Study Session
       </h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-gray-100">
         <table className="table table-zebra">
           {/* head */}
           <thead>
             <tr>
               <th></th>
-              <th>Title</th>
-              <th>Registration Fee</th>
-              <th>Tutor Name</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th className="text-lg font-semibold">Title</th>
+              <th className="text-lg font-semibold">Registration Fee</th>
+              <th className="text-lg font-semibold hidden md:block">Tutor Name</th>
+              <th className="text-lg font-semibold">Status</th>
+              <th className="text-lg font-semibold">Action</th>
             </tr>
           </thead>
           <tbody>
             {session?.map((item) => (
               <tr key={item._id}>
                 <th></th>
-                <td>{item.title}</td>
-                <td>{item.registrationFee}</td>
-                <td>{item.tutorName}</td>
-                <td>{item.status}</td>
+                <td className="font-semibold">{item.title}</td>
+                <td className="font-semibold">{item.registrationFee}</td>
+                <td className="font-semibold hidden md:block">{item.tutorName}</td>
+                <td className="font-semibold">{item.status}</td>
                 <td className="flex items-center gap-3 md:gap-5">
                   <button
                     onClick={() => {
