@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { MdOutlineDelete } from "react-icons/md";
 import { useState } from "react";
-import LoadingSection from "../../../Shared/LoadingSection/LoadingSection";
 
 const ViewAllUsers = () => {
   const [search, setSearch] = useState("");

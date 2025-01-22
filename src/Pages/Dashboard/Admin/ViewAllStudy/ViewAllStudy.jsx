@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import ViewAllStudyModal from "../ViewAllStudyModal/ViewAllStudyModal";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ViewAllStudy = () => {
   const [item, setItem] = useState([]);
@@ -10,10 +11,42 @@ const ViewAllStudy = () => {
   const { data: session = [], refetch } = useQuery({
     queryKey: ["session"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/studySessionsAll");
+      const res = await axiosSecure.get("/studySessionsAllFilter");
       return res?.data;
     },
   });
+  // filter functionality implement 
+  // const rejectedSessions = session?.filter(item => item.status !== "rejected")
+
+  // handle reject button 
+  const handleRejecting = (id) => {
+    const rejectedData = {
+      status: 'rejected',
+    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, reject and remove it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+    axiosSecure.patch(`/studySession/rejected/${id}`, rejectedData).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Rejected!",
+              text: "Status rejected and removed is successfully.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  }
+  
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -81,7 +114,7 @@ const ViewAllStudy = () => {
                         Approved
                       </button>
                       <button
-                        // onClick={() => handleRejecting(item._id)}
+                        onClick={() => handleRejecting(item._id)}
                         className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
                       >
                         Reject
@@ -91,7 +124,8 @@ const ViewAllStudy = () => {
                   {
                     item.status === "approved" && (
                       <div className="flex items-center gap-3 md:gap-5">
-                        <button className="py-1 px-4 bg-green-800 text-white font-semibold rounded-lg">Update</button>
+                        <Link to={`/dashboard/updateViewAllStudy/${item._id}`}>
+                        <button className="py-1 px-4 bg-green-800 text-white font-semibold rounded-lg">Update</button></Link>
                         <button onClick={() => handleDelete(item._id)} className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg">Delete</button>
                       </div>
                     )

@@ -76,11 +76,9 @@ const DashboardLayout = () => {
             </li>
             <li>
             <Link
-              to="/login"
-              className="font-semibold text-white hover:bg-gray-800 my-1"
             >
-              <AiOutlineLogout className="mt-1" />
-              Logout
+              <button className="flex gap-2 font-semibold text-white hover:bg-gray-800 my-1" onClick={logOut}><AiOutlineLogout className="mt-1" />
+              Logout</button>
             </Link>
           </li>
           </ul>
@@ -137,11 +135,9 @@ const DashboardLayout = () => {
           </li>
           <li>
             <Link
-              to="/login"
-              className="font-semibold text-white hover:bg-gray-800 my-1"
             >
-              <AiOutlineLogout className="mt-1" />
-              Logout
+              <button className="flex gap-2 font-semibold text-white hover:bg-gray-800 my-1" onClick={logOut}><AiOutlineLogout className="mt-1" />
+              Logout</button>
             </Link>
           </li>
         </ul>

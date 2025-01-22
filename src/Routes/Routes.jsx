@@ -21,6 +21,7 @@ import UpdatePersonalNotes from "../Pages/Dashboard/Students/UpdatePersonalNotes
 import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAllStudyTutor";
 import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
 import ProfilePage from "../Pages/Shared/ProflePage/ProfilePage";
+import ViewAllStudyUpdate from "../Pages/Dashboard/Admin/ViewAllStudyUpdate/ViewAllStudyUpdate";
 
 export const router = createBrowserRouter([
     {
@@ -55,12 +56,20 @@ export const router = createBrowserRouter([
         children: [
             // admin routes 
             {
+                path:'',
+                element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
+            },
+            {
                 path:'viewAllStudy',
                 element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
             },
             {
                 path:'viewAllUsers',
                 element:<PrivateRoute><AdminRoute><ViewAllUsers></ViewAllUsers></AdminRoute></PrivateRoute>
+            },
+            {
+                path:'updateViewAllStudy/:id',
+                element:<PrivateRoute><AdminRoute><ViewAllStudyUpdate></ViewAllStudyUpdate></AdminRoute></PrivateRoute>
             },
 
             //tutor routes
