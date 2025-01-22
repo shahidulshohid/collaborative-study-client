@@ -14,7 +14,7 @@ const ViewAllStudy = () => {
       return res?.data;
     },
   });
-  const handleRejecting = (id) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -30,7 +30,7 @@ const ViewAllStudy = () => {
             refetch();
             Swal.fire({
               title: "Deleted!",
-              text: "Pending has been removed.",
+              text: "Study session has been deleted.",
               icon: "success",
             });
           }
@@ -51,7 +51,9 @@ const ViewAllStudy = () => {
               <th></th>
               <th className="text-lg font-semibold">Title</th>
               <th className="text-lg font-semibold">Registration Fee</th>
-              <th className="text-lg font-semibold hidden md:block">Tutor Name</th>
+              <th className="text-lg font-semibold hidden md:block">
+                Tutor Name
+              </th>
               <th className="text-lg font-semibold">Status</th>
               <th className="text-lg font-semibold">Action</th>
             </tr>
@@ -62,24 +64,38 @@ const ViewAllStudy = () => {
                 <th></th>
                 <td className="font-semibold">{item.title}</td>
                 <td className="font-semibold">{item.registrationFee}</td>
-                <td className="font-semibold hidden md:block">{item.tutorName}</td>
+                <td className="font-semibold hidden md:block">
+                  {item.tutorName}
+                </td>
                 <td className="font-semibold">{item.status}</td>
-                <td className="flex items-center gap-3 md:gap-5">
-                  <button
-                    onClick={() => {
-                      document.getElementById("my_modal_1").showModal(),
-                        setItem(item);
-                    }}
-                    className="py-1 px-2 bg-blue-500 text-white font-semibold rounded-lg"
-                  >
-                    Approve
-                  </button>
-                  <button
-                    onClick={() => handleRejecting(item._id)}
-                    className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
-                  >
-                    Reject
-                  </button>
+                <td>
+                  {item?.status === "pending" && (
+                    <div className="flex items-center gap-3 md:gap-5">
+                      <button
+                        onClick={() => {
+                          document.getElementById("my_modal_1").showModal(),
+                            setItem(item);
+                        }}
+                        className="py-1 px-2 bg-blue-500 text-white font-semibold rounded-lg"
+                      >
+                        Approved
+                      </button>
+                      <button
+                        // onClick={() => handleRejecting(item._id)}
+                        className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
+                      >
+                        Reject
+                      </button>
+                    </div>
+                  )}
+                  {
+                    item.status === "approved" && (
+                      <div className="flex items-center gap-3 md:gap-5">
+                        <button className="py-1 px-4 bg-green-800 text-white font-semibold rounded-lg">Update</button>
+                        <button onClick={() => handleDelete(item._id)} className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg">Delete</button>
+                      </div>
+                    )
+                  }
                 </td>
               </tr>
             ))}
