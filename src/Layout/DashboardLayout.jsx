@@ -127,7 +127,7 @@ const DashboardLayout = () => {
           <li>
             <Link
               to="/dashboard/myProfile"
-              className="font-semibold text-white hover:bg-gray-800 my-1"
+              className="font-semibold text-white hover:bg-gray-800 hover:text-white my-1"
             >
               <CgProfile />
               Profile
