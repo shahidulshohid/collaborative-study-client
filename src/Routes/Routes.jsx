@@ -20,6 +20,7 @@ import ManagePersonalNode from "../Pages/Dashboard/Students/ManagePersonalNote/M
 import UpdatePersonalNotes from "../Pages/Dashboard/Students/UpdatePersonalNotes/UpdatePersonalNotes";
 import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAllStudyTutor";
 import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
+import ProfilePage from "../Pages/Shared/ProflePage/ProfilePage";
 
 export const router = createBrowserRouter([
     {
@@ -101,7 +102,12 @@ export const router = createBrowserRouter([
             {
                 path:'updatePersonalNotes/:id',
                 element:<PrivateRoute><UpdatePersonalNotes></UpdatePersonalNotes></PrivateRoute>
-            }
+            },
+            
+            {
+                path:"myProfile",
+                element:<PrivateRoute><ProfilePage></ProfilePage></PrivateRoute>
+            },
         ]
     }
 ])

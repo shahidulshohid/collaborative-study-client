@@ -7,10 +7,11 @@ import StudentLayout from "./StudentLayout/StudentLayout";
 import TutorLayout from "./TutorLayout/TutorLayout";
 import useAdmin from "../Hooks/useAdmin";
 import { FaBars } from "react-icons/fa";
+import useAuth from "../Hooks/useAuth";
 
 const DashboardLayout = () => {
   const [role] = useAdmin();
-  console.log(role);
+  const {logOut} = useAuth()
   return (
     <div className="md:flex">
       {/* for responsive (sidebar)*/}
@@ -66,7 +67,7 @@ const DashboardLayout = () => {
             <div className="border-t-2"></div>
             <li>
               <Link
-                to="/"
+                to="/dashboard/myProfile"
                 className="font-semibold text-white hover:bg-gray-800 my-1"
               >
                 <CgProfile />
@@ -74,14 +75,14 @@ const DashboardLayout = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/login"
-                className="font-semibold text-white hover:bg-gray-800 my-1"
-              >
-                <AiOutlineLogout className="mt-1" />
-                Logout
-              </Link>
-            </li>
+            <Link
+              to="/login"
+              className="font-semibold text-white hover:bg-gray-800 my-1"
+            >
+              <AiOutlineLogout className="mt-1" />
+              Logout
+            </Link>
+          </li>
           </ul>
         </div>
       </div>
@@ -127,7 +128,7 @@ const DashboardLayout = () => {
           <div className="border-t-2"></div>
           <li>
             <Link
-              to="/"
+              to="/dashboard/myProfile"
               className="font-semibold text-white hover:bg-gray-800 my-1"
             >
               <CgProfile />
