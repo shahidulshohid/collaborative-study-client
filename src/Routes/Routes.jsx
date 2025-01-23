@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
         children: [
             // admin routes 
             {
-                path:'',
+                path:'adminHome',
                 element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
             },
             {
@@ -114,7 +114,7 @@ export const router = createBrowserRouter([
             },
             
             {
-                path:"myProfile",
+                index:true,
                 element:<PrivateRoute><ProfilePage></ProfilePage></PrivateRoute>
             },
         ]

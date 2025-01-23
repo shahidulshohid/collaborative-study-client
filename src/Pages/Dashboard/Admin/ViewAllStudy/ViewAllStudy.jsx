@@ -15,9 +15,7 @@ const ViewAllStudy = () => {
       return res?.data;
     },
   });
-  // filter functionality implement 
-  // const rejectedSessions = session?.filter(item => item.status !== "rejected")
-
+  
   // handle reject button 
   const handleRejecting = (id) => {
     const rejectedData = {
@@ -34,7 +32,8 @@ const ViewAllStudy = () => {
     }).then((result) => {
       if (result.isConfirmed) {
     axiosSecure.patch(`/studySession/rejected/${id}`, rejectedData).then((res) => {
-          if (res.data.deletedCount > 0) {
+          if (res.data.modifiedCount > 0) {
+            console.log(res.data)
             refetch();
             Swal.fire({
               title: "Rejected!",

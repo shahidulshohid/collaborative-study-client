@@ -8,7 +8,7 @@ const AdminLayout = () => {
     return (
         <div>
             <li>
-              <NavLink to="/dashboard" className="font-semibold text-white hover:bg-gray-800 my-1">
+              <NavLink to="/adminHome" className="font-semibold text-white hover:bg-gray-800 my-1">
               <TfiHome />
                 Admin Home
               </NavLink>
