@@ -7,47 +7,19 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const Footer = () => {
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "88f9a790-8572-4074-aec2-b48c5e4ba0a7");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
-
-    if (res.success) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Email sent successfully",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  };
   return (
-    <div className="my-12">
+    <div className="my-12 bg-gray-800">
       <Container>
-        <footer className="footer bg-gray-800 p-10">
-          <div className="flex justify-between">
+        <footer className=" lg:p-10">
+          <div className="md:flex justify-between">
             <div className="flex-col">
               <div className="flex items-center gap-3">
                 <img className="w-12 h-12 rounded-full" src={logo} alt="" />
-                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-300">
                   Study Sphere
                 </h3>
               </div>
-              <p className="text-white max-w-xl my-3">
+              <p className="text-gray-300 max-w-lg my-3">
                 The Study Sphere refers to an environment, platform, or
                 ecosystem designed to facilitate learning, research, and
                 personal development. It can encompass physical spaces, digital
@@ -85,12 +57,23 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                Contact Us
-              </h3>
+            <div className="text-gray-300">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-2">Features</h3>
+              <p>Study session section</p>
+              <p>Tutor Section</p>
+              <p>View booked session</p>
+              <p>Create note</p>
+              <p>Manage personal notes</p>
+              <p>View all study materials</p>
+            </div>
+
+            <div className="text-gray-300">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-2">Contact Us</h3>
+            <h4>Email: shahidulislamshohid7@gmail.com</h4>
+            <h4>Phone: 01738283277</h4>
             </div>
           </div>
+          <p className="text-center text-gray-300 mt-5">© 2025 Study Sphere. All rights reserved.</p>
         </footer>
       </Container>
     </div>

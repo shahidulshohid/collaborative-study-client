@@ -41,7 +41,7 @@ const ViewDetailsPage = () => {
     const reviewData = {
       review, 
       rating,
-      studentEmail: user?.displayName,
+      studentName: user?.displayName,
       studentEmail: user?.email,
       studySessionId,
     }
