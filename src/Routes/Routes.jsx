@@ -23,6 +23,7 @@ import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAl
 import ProfilePage from "../Pages/Shared/ProflePage/ProfilePage";
 import ViewAllStudyUpdate from "../Pages/Dashboard/Admin/ViewAllStudyUpdate/ViewAllStudyUpdate";
 import ErrorPage from "../Layout/ErrorPage";
+import UploadMaterials from "../Pages/Dashboard/Tutor/UploadMaterials/UploadMaterials";
 
 export const router = createBrowserRouter([
     {
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
             {
                 path:'viewAllStudyTutor',
                 element:<PrivateRoute><TutorRoute><ViewAllStudyTutor></ViewAllStudyTutor></TutorRoute></PrivateRoute>
+            },
+            {
+                path:'uploadMaterials',
+                element:<PrivateRoute><TutorRoute><UploadMaterials></UploadMaterials></TutorRoute></PrivateRoute>
             },
 
             //students routes
