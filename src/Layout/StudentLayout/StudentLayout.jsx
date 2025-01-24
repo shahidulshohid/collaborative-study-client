@@ -9,7 +9,7 @@ const StudentLayout = () => {
     return (
         <div>
             <li>
-            <NavLink to="/dashboard/studentHome" className="font-semibold text-white hover:bg-gray-800 my-1"><TfiHome /> Student Home</NavLink>
+            <NavLink to="/" className="font-semibold text-white hover:bg-gray-800 my-1"><TfiHome />Student Home</NavLink>
           </li>
           <li>
             <NavLink to="/dashboard/viewBookSession" className="font-semibold text-white hover:bg-gray-800 my-1">

@@ -13,20 +13,22 @@ import ViewAllUsers from "../Pages/Dashboard/Admin/ViewAllUsers/ViewAllUsers";
 import AdminRoute from "./AdminRoute";
 import TutorRoute from "./TutorRoute";
 import PaymentPage from "../Pages/Home/Home/PaymentPage/PaymentPage";
-import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
+// import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
 import ViewDetailsPage from "../Pages/Dashboard/Students/StudentHome/ViewDetailsPage/ViewDetailsPage";
 import CreateNote from "../Pages/Dashboard/Students/CreateNote/CreateNote";
 import ManagePersonalNode from "../Pages/Dashboard/Students/ManagePersonalNote/ManagePersonalNode";
 import UpdatePersonalNotes from "../Pages/Dashboard/Students/UpdatePersonalNotes/UpdatePersonalNotes";
 import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAllStudyTutor";
-import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
+// import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
 import ProfilePage from "../Pages/Shared/ProflePage/ProfilePage";
 import ViewAllStudyUpdate from "../Pages/Dashboard/Admin/ViewAllStudyUpdate/ViewAllStudyUpdate";
+import ErrorPage from "../Layout/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path:'/',
         element: <MainLayout></MainLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
@@ -55,10 +57,10 @@ export const router = createBrowserRouter([
         element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             // admin routes 
-            {
-                path:'adminHome',
-                element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
-            },
+            // {
+            //     path:'adminHome',
+            //     element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
+            // },
             {
                 path:'viewAllStudy',
                 element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
@@ -73,10 +75,10 @@ export const router = createBrowserRouter([
             },
 
             //tutor routes
-            {
-                path:'tutorHome',
-                element:<TutorHome></TutorHome>
-            },
+            // {
+            //     path:'/',
+            //     element:<TutorHome>Home</TutorHome>
+            // },
             {
                 path:'createStudySession',
                 element:<PrivateRoute><TutorRoute><CreateStudySession></CreateStudySession></TutorRoute></PrivateRoute>
@@ -87,10 +89,10 @@ export const router = createBrowserRouter([
             },
 
             //students routes
-            {
-                path:'studentHome',
-                element:<StudentHome></StudentHome>
-            },
+            // {
+            //     path:'/',
+            //     element:<StudentHome></StudentHome>
+            // },
             {
                 path:'viewBookSession',
                 element:<PrivateRoute><ViewBookSession></ViewBookSession></PrivateRoute>

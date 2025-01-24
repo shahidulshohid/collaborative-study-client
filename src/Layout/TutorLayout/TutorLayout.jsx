@@ -9,7 +9,7 @@ const TutorLayout = () => {
     return (
         <div>
             <li>
-              <NavLink to="/dashboard/tutorHome" className="font-semibold text-white hover:bg-gray-800 my-1">
+              <NavLink to="/" className="font-semibold text-white hover:bg-gray-800 my-1">
                 <AiOutlineHome />
                 Tutor Home
               </NavLink>

@@ -4,13 +4,15 @@ import ShowStudySection from "../ShowStudySection/ShowStudySection";
 import TutorSection from "./TutorSection/TutorSection";
 
 const Home = () => {
-    return (
-        <Container>
-           <Banner></Banner>
-           <ShowStudySection></ShowStudySection>
-           <TutorSection></TutorSection>
-        </Container>
-    );
+  return (
+    <div>
+      <Banner></Banner>
+      <Container>
+        <ShowStudySection></ShowStudySection>
+        <TutorSection></TutorSection>
+      </Container>
+    </div>
+  );
 };
 
 export default Home;

@@ -64,11 +64,11 @@ const DashboardLayout = () => {
             </Link>
           </li>
           <li>
-            <Link
-            >
+            {/* <Link
+            > */}
               <button className="flex gap-2 font-semibold text-white hover:bg-gray-800 my-1" onClick={logOut}><AiOutlineLogout className="mt-1" />
               Logout</button>
-            </Link>
+            {/* </Link> */}
           </li>
         </ul>
       </div>
