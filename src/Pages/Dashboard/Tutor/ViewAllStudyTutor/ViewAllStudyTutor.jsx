@@ -1,13 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAuth from "../../../../Hooks/useAuth";
 
 const ViewAllStudyTutor = () => {
+  const {user} = useAuth()
+  console.log(user.email)
   const axiosSecure = useAxiosSecure();
   const { data: session = [], refetch } = useQuery({
-    queryKey: ["session"],
+    queryKey: ["session", user?.email],
     queryFn: async () => {
-      const res = await axiosSecure.get("/studySessionsAll");
+      const res = await axiosSecure.get(`/studySessionsAll/${user?.email}`);
       return res.data;
     },
   });
@@ -36,7 +39,6 @@ const ViewAllStudyTutor = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {session?.map((item) => (
           <div key={item._id} className="border p-3 rounded-xl">
-            {/* {(item?.status === "approved" || item?.status === "rejected") && ( */}
               <div>
                 <img
                   className="h-[200px] w-full object-cover rounded-xl"
@@ -56,13 +58,17 @@ const ViewAllStudyTutor = () => {
                   </button>
                   <h3>{item.description.substring(0, 100)}...</h3>
                   {item.status === "rejected" && (
-                    <button onClick={() => handleApproval(item._id)} className="btn bg-blue-500 hover:bg-blue-500 text-white font-semibold">
+                    <button onClick={() => handleApproval(item._id)} className="btn bg-blue-500 hover:bg-blue-500 text-white font-semibold mt-2">
                       New Approval Request
+                    </button>
+                  )}
+                  {item.status === "approved" && (
+                    <button onClick={() => handleApproval(item._id)} className="btn bg-green-600 hover:bg-green-800 text-white font-semibold mt-2">
+                      Upload Materials
                     </button>
                   )}
                 </div>
               </div>
-            {/* //  )} */}
           </div>
         ))}
       </div>
