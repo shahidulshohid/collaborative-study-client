@@ -1,39 +1,34 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
-import useAuth from "../../../../Hooks/useAuth";
+import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 const UploadMaterials = () => {
-  const { user } = useAuth();
-  const axiosSecure = useAxiosSecure();
-  const { data: sessionId = [] } = useQuery({
-    queryKey: ["sessionId"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/studySessionsAll");
-      return res.data;
-    },
-  });
-  // console.log(sessionId)
-
+  const { id } = useParams();
+  const sessionId = id;
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div className="mx-4 lg:mx-0">
       <h3 className="text-center mb-5 text-2xl md:text-3xl font-semibold">
-        All Approved Session
+        Upload Materials
       </h3>
-      {/* <div className="md:flex gap-2">
-        {
-          sessionId?.map(item => (
-            <div key={item._id}>
-              {
-                item.status === "approved" && (
-                  <div>
-                    <img src={item?.image} alt="" />
-                  </div>
-                )
-              }
+      <div className="bg-[#d0e293] md:w-3/4 mx-auto px-5 lg:px-8 py-6 rounded-xl">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label className="form-control w-full my-6">
+            <div className="label">
+              <span className="label-text">Title</span>
             </div>
-          ))
-        }
-      </div> */}
+            <input
+              type="text"
+              placeholder="Title"
+              {...register("title")}
+              className="input input-bordered w-full"
+            />
+          </label>
+          <input type="submit" />
+        </form>
+      </div>
     </div>
   );
 };

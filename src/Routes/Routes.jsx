@@ -89,7 +89,7 @@ export const router = createBrowserRouter([
                 element:<PrivateRoute><TutorRoute><ViewAllStudyTutor></ViewAllStudyTutor></TutorRoute></PrivateRoute>
             },
             {
-                path:'uploadMaterials',
+                path:'uploadMaterials/:id',
                 element:<PrivateRoute><TutorRoute><UploadMaterials></UploadMaterials></TutorRoute></PrivateRoute>
             },
 

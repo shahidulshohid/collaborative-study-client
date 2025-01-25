@@ -2,7 +2,6 @@ import { AiOutlineHome } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
 import { RiFileListLine } from "react-icons/ri";
-import { FiUpload } from "react-icons/fi";
 import { MdStreetview } from "react-icons/md";
 
 const TutorLayout = () => {
@@ -23,11 +22,6 @@ const TutorLayout = () => {
               <NavLink to="/dashboard/viewAllStudyTutor" className="font-semibold text-white hover:bg-gray-800 my-1">
               <RiFileListLine />View all study sessions
                 {/* created by a tutor  */}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/uploadMaterials" className="font-semibold text-white hover:bg-gray-800 my-1">
-              <FiUpload /> Upload materials
               </NavLink>
             </li>
             <li>
