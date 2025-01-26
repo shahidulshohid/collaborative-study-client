@@ -25,6 +25,7 @@ import ViewAllStudyUpdate from "../Pages/Dashboard/Admin/ViewAllStudyUpdate/View
 import ErrorPage from "../Layout/ErrorPage";
 import UploadMaterials from "../Pages/Dashboard/Tutor/UploadMaterials/UploadMaterials";
 import ViewAllMaterialsTutor from "../Pages/Dashboard/Tutor/TutorHome/ViewAllMaterialsTutor/ViewAllMaterialsTutor";
+import UpdateMaterialTutor from "../Pages/Dashboard/Tutor/UpdateMaterialTutor/UpdateMaterialTutor";
 
 export const router = createBrowserRouter([
     {
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
             {
                 path:'viewAllMaterialsTutor',
                 element:<PrivateRoute><TutorRoute><ViewAllMaterialsTutor></ViewAllMaterialsTutor></TutorRoute></PrivateRoute>
+            },
+            {
+                path:'updateMaterial/:id',
+                element:<PrivateRoute><TutorRoute><UpdateMaterialTutor></UpdateMaterialTutor></TutorRoute></PrivateRoute>
             },
 
             //students routes

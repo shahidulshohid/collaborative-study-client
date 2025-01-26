@@ -13,7 +13,6 @@ const ViewAllMaterialsTutor = () => {
       return res.data;
     },
   });
-  console.log(viewMaterials);
   return (
     <div>
       <h3 className="text-center mb-5 text-2xl md:text-3xl font-semibold">
