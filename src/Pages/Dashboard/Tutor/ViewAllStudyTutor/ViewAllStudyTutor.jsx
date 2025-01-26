@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const ViewAllStudyTutor = () => {
   const { user } = useAuth();
-  console.log(user.email);
   const axiosSecure = useAxiosSecure();
   const { data: session = [], refetch } = useQuery({
     queryKey: ["session", user?.email],
