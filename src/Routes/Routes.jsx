@@ -24,6 +24,7 @@ import ProfilePage from "../Pages/Shared/ProflePage/ProfilePage";
 import ViewAllStudyUpdate from "../Pages/Dashboard/Admin/ViewAllStudyUpdate/ViewAllStudyUpdate";
 import ErrorPage from "../Layout/ErrorPage";
 import UploadMaterials from "../Pages/Dashboard/Tutor/UploadMaterials/UploadMaterials";
+import ViewAllMaterialsTutor from "../Pages/Dashboard/Tutor/TutorHome/ViewAllMaterialsTutor/ViewAllMaterialsTutor";
 
 export const router = createBrowserRouter([
     {
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
             {
                 path:'uploadMaterials/:id',
                 element:<PrivateRoute><TutorRoute><UploadMaterials></UploadMaterials></TutorRoute></PrivateRoute>
+            },
+            {
+                path:'viewAllMaterialsTutor',
+                element:<PrivateRoute><TutorRoute><ViewAllMaterialsTutor></ViewAllMaterialsTutor></TutorRoute></PrivateRoute>
             },
 
             //students routes

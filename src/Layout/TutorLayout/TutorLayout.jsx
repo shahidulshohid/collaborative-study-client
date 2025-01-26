@@ -25,7 +25,7 @@ const TutorLayout = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/viewAllMaterials" className="font-semibold text-white hover:bg-gray-800 my-1">
+              <NavLink to="/dashboard/viewAllMaterialsTutor" className="font-semibold text-white hover:bg-gray-800 my-1">
               <MdStreetview /> View all materials
               </NavLink>
             </li>
