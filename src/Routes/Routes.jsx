@@ -27,6 +27,7 @@ import UploadMaterials from "../Pages/Dashboard/Tutor/UploadMaterials/UploadMate
 import ViewAllMaterialsTutor from "../Pages/Dashboard/Tutor/TutorHome/ViewAllMaterialsTutor/ViewAllMaterialsTutor";
 import UpdateMaterialTutor from "../Pages/Dashboard/Tutor/UpdateMaterialTutor/UpdateMaterialTutor";
 import ViewAllStudyMaterials from "../Pages/Dashboard/Students/ViewAllStudyMaterials/ViewAllStudyMaterials";
+import ViewAllMaterialsAdmin from "../Pages/Dashboard/Admin/ViewAllMaterialsAdming/ViewAllMaterialsAdmin";
 
 export const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
             {
                 path:'updateViewAllStudy/:id',
                 element:<PrivateRoute><AdminRoute><ViewAllStudyUpdate></ViewAllStudyUpdate></AdminRoute></PrivateRoute>
+            },
+            {
+                path:'viewAllMaterialsAdmin',
+                element:<PrivateRoute><AdminRoute><ViewAllMaterialsAdmin></ViewAllMaterialsAdmin></AdminRoute></PrivateRoute>
             },
 
             //tutor routes

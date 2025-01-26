@@ -16,9 +16,9 @@ const ViewAllStudyMaterials = () => {
     },
   });
   console.log(bookedSession);
-  const handleSessionId = (sessionId) => {
-    console.log(sessionId);
-    axiosPublic.get(`/allMaterials?sessionId=${sessionId}`)
+  const handleSessionId = (id) => {
+    console.log(id);
+    axiosPublic.get(`/allMaterials/:sessionId/${id}`)
     .then(res => setMaterials(res.data))
 
   };

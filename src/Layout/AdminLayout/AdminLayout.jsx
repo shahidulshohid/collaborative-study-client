@@ -31,7 +31,7 @@ const AdminLayout = () => {
       </li>
       <li>
         <NavLink
-          to="/dashboard/viewAllMaterial"
+          to="/dashboard/viewAllMaterialsAdmin"
           className="font-semibold text-white hover:bg-gray-800 my-1"
         >
           <SiGooglestreetview /> View all materials
