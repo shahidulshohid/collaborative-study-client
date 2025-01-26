@@ -13,9 +13,9 @@ const UploadMaterials = () => {
   const { user } = useAuth();
   const { id } = useParams();
   const sessionId = id;
+  const tutorEmail = user?.email
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
     // image upload to imabb and then get url
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -84,8 +84,8 @@ const UploadMaterials = () => {
             <input
               type="text"
               placeholder="SessionId"
-              defaultValue={user?.email}
-              {...register("sessionId")}
+              defaultValue={tutorEmail}
+              {...register("tutorEmail")}
               disabled
               className="input input-bordered w-full"
             />

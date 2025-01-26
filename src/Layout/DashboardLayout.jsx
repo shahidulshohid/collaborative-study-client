@@ -9,6 +9,7 @@ import useAdmin from "../Hooks/useAdmin";
 import { FaBars } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 import { AiOutlineMenu } from "react-icons/ai";
+import { TfiHome } from "react-icons/tfi";
 
 const DashboardLayout = () => {
   const [role] = useAdmin();
@@ -123,6 +124,15 @@ const DashboardLayout = () => {
 
           {/* shared */}
           <div className="border-t-2"></div>
+          <li>
+            <Link
+              to="/"
+              className="font-semibold text-white hover:bg-gray-800 hover:text-white"
+            >
+              <TfiHome />
+              Home
+            </Link>
+          </li>
           <li>
             <Link
               to="/dashboard"

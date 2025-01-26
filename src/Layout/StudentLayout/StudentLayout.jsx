@@ -3,14 +3,15 @@ import { BsBook } from "react-icons/bs";
 import { FaRegEdit } from "react-icons/fa";
 import { MdFormatListBulleted } from "react-icons/md";
 import { MdViewInAr } from "react-icons/md";
-import { TfiHome } from "react-icons/tfi";
+import { PiStudentDuotone } from "react-icons/pi";
 
 const StudentLayout = () => {
     return (
         <div>
-            <li>
-            <NavLink to="/" className="font-semibold text-white hover:bg-gray-800 my-1"><TfiHome />Student Home</NavLink>
-          </li>
+          <div className="font-semibold text-lg text-white gap-2 my-1 ml-5 flex items-center">
+          <PiStudentDuotone />
+          <h2>Student</h2>
+          </div>
           <li>
             <NavLink to="/dashboard/viewBookSession" className="font-semibold text-white hover:bg-gray-800 my-1">
             <BsBook /> View booked session
@@ -25,7 +26,7 @@ const StudentLayout = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/viewAllMaterials" className="font-semibold text-white hover:bg-gray-800 my-1">
+            <NavLink to="/dashboard/viewAllStudyMaterials" className="font-semibold text-white hover:bg-gray-800 my-1">
             <MdViewInAr /> View all study materials
             </NavLink>
           </li>
