@@ -3,21 +3,24 @@ import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 
 const image_hosting_key = import.meta.env.VITE_IMG_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const UpdateMaterialTutor = () => {
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
   const { id } = useParams();
   const { register, handleSubmit } = useForm();
-  const {data:getMaterialForUpdate = {}} =useQuery({
-    queryKey:['getMaterialForUpdate', id],
-    queryFn: async() => {
-        const res = await axiosSecure(`/getMaterialForUpdate/${id}`)
-        return res.data
-    }
-  })
-  console.log(getMaterialForUpdate)
+  const { data: getMaterialForUpdate = {}, refetch } = useQuery({
+    queryKey: ["getMaterialForUpdate", id],
+    queryFn: async () => {
+      const res = await axiosSecure(`/getMaterialForUpdate/${id}`);
+      return res.data;
+    },
+  });
+  //   console.log(getMaterialForUpdate)
+
   const onSubmit = async (data) => {
     console.log(data);
     // image upload to imabb and then get url
@@ -28,25 +31,28 @@ const UpdateMaterialTutor = () => {
       },
     });
     if (res.data.success) {
-      const materialsItem = {
+      const imageUrl = res.data.data.url;
+
+      const updateMaterialData = {
         title: data.title,
-        image: res.data.data.url,
+        image: imageUrl,
         googleLink: data.googleLink,
       };
       // send data to database
-      const materialsRes = await axiosSecure.post("materials", materialsItem);
-      if (materialsRes.data.insertedId) {
+      const materialsDataRes = await axiosSecure.patch(
+        `/materialsUpdate/${id}`,
+        updateMaterialData
+      );
+      if (materialsDataRes.data.modifiedCount > 0) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Materials uploaded successfully",
+          title: "Materials update successfully",
           showConfirmButton: false,
           timer: 1500,
         });
       }
-      console.log(materialsItem);
     }
-    console.log(res.data);
   };
   return (
     <div className="mx-4 lg:mx-0">
@@ -61,6 +67,7 @@ const UpdateMaterialTutor = () => {
             </div>
             <input
               type="text"
+              defaultValue={getMaterialForUpdate?.title}
               placeholder="Title"
               {...register("title", { required: true })}
               className="input input-bordered w-full"
@@ -72,6 +79,7 @@ const UpdateMaterialTutor = () => {
             </div>
             <input
               type="text"
+              defaultValue={getMaterialForUpdate?.googleLink}
               placeholder="Google Drive Link"
               {...register("googleLink", { required: true })}
               className="input input-bordered w-full"
@@ -79,13 +87,13 @@ const UpdateMaterialTutor = () => {
           </label>
           <label className="form-control w-full my-4">
             <input
-              {...register("image", { required: true })}
+              {...register("image")}
               type="file"
               className="file-input w-full"
             />
           </label>
           <button className="btn bg-blue-500 hover:bg-blue-500 text-lg font-semibold text-white">
-            Submit Materials
+            Update Materials
           </button>
         </form>
       </div>
