@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
 import { RiFileListLine } from "react-icons/ri";
@@ -8,10 +7,10 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 const TutorLayout = () => {
   return (
     <div>
-      <div className="font-semibold text-lg text-white gap-2 my-1 ml-5 flex items-center">
-      <FaChalkboardTeacher />
-        <h2>Tutor</h2>
-      </div>
+      <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
+        <FaChalkboardTeacher />
+        <h2>Student</h2>
+      </button>
       <li>
         <NavLink
           to="/dashboard/createStudySession"

@@ -7,10 +7,10 @@ import { GrUserAdmin } from "react-icons/gr";
 const AdminLayout = () => {
   return (
     <div>
-      <div className="font-semibold text-lg text-white gap-2 my-1 ml-5 flex items-center">
-      <GrUserAdmin />
-        <h2>Admin</h2>
-      </div>
+      <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
+        <GrUserAdmin />
+        <h2>Student</h2>
+      </button>
       <li>
         <NavLink
           to="/dashboard/viewAllUsers"

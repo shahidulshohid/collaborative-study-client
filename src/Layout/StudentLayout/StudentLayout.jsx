@@ -8,10 +8,10 @@ import { PiStudentDuotone } from "react-icons/pi";
 const StudentLayout = () => {
     return (
         <div>
-          <div className="font-semibold text-lg text-white gap-2 my-1 ml-5 flex items-center">
+          <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
           <PiStudentDuotone />
           <h2>Student</h2>
-          </div>
+          </button>
           <li>
             <NavLink to="/dashboard/viewBookSession" className="font-semibold text-white hover:bg-gray-800 my-1">
             <BsBook /> View booked session
