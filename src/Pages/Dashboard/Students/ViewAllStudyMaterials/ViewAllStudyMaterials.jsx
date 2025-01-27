@@ -18,8 +18,8 @@ const ViewAllStudyMaterials = () => {
   console.log(bookedSession);
   const handleSessionId = (id) => {
     console.log(id);
-    axiosPublic.get(`/allMaterials/:sessionId/${id}`)
-    .then(res => setMaterials(res.data))
+    // axiosPublic.get(`/allMaterials/:sessionId/${id}`)
+    // .then(res => setMaterials(res.data))
 
   };
   console.log(materials)
@@ -30,7 +30,10 @@ const ViewAllStudyMaterials = () => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {bookedSession?.map((session) => (
-          <div key={session._id} onClick={() => handleSessionId(session._id)}>
+          <div key={session._id}>
+            <div>
+              <img className="h-[150px] w-full object-cover" src={session.image} alt="" />
+            </div>
             <h2 className="text-lg font-semibold">{session.title}</h2>
             <p>
               Registration start date:{" "}
@@ -40,6 +43,7 @@ const ViewAllStudyMaterials = () => {
               Registration end date:{" "}
               {session.resEndDate && format(new Date(session.resEndDate), "P")}
             </p>
+            <button onClick={() => handleSessionId(session._id)}>View All</button>
           </div>
         ))}
       </div>

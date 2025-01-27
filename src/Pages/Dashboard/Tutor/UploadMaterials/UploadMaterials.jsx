@@ -42,9 +42,7 @@ const UploadMaterials = () => {
           timer: 1500,
         });
       }
-      console.log(materialsItem);
     }
-    console.log(res.data);
   };
   return (
     <div className="mx-4 lg:mx-0">

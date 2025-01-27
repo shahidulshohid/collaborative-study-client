@@ -14,7 +14,6 @@ const ViewAllMaterialsTutor = () => {
       return res.data;
     },
   });
-  console.log(viewMaterials)
 
   const deleteMaterial = (id) => {
     Swal.fire({

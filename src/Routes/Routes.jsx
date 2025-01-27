@@ -28,6 +28,7 @@ import ViewAllMaterialsTutor from "../Pages/Dashboard/Tutor/TutorHome/ViewAllMat
 import UpdateMaterialTutor from "../Pages/Dashboard/Tutor/UpdateMaterialTutor/UpdateMaterialTutor";
 import ViewAllStudyMaterials from "../Pages/Dashboard/Students/ViewAllStudyMaterials/ViewAllStudyMaterials";
 import ViewAllMaterialsAdmin from "../Pages/Dashboard/Admin/ViewAllMaterialsAdming/ViewAllMaterialsAdmin";
+import TutorMaterials from "../Pages/Dashboard/Tutor/TutorHome/TutorMaterials";
 
 export const router = createBrowserRouter([
     {
@@ -84,10 +85,7 @@ export const router = createBrowserRouter([
             },
 
             //tutor routes
-            // {
-            //     path:'/',
-            //     element:<TutorHome>Home</TutorHome>
-            // },
+        
             {
                 path:'createStudySession',
                 element:<PrivateRoute><TutorRoute><CreateStudySession></CreateStudySession></TutorRoute></PrivateRoute>
@@ -95,6 +93,10 @@ export const router = createBrowserRouter([
             {
                 path:'viewAllStudyTutor',
                 element:<PrivateRoute><TutorRoute><ViewAllStudyTutor></ViewAllStudyTutor></TutorRoute></PrivateRoute>
+            },
+            {
+                path:'tutorMaterials',
+                element:<PrivateRoute><TutorRoute><TutorMaterials></TutorMaterials></TutorRoute></PrivateRoute>
             },
             {
                 path:'uploadMaterials/:id',

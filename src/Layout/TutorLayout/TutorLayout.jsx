@@ -9,7 +9,7 @@ const TutorLayout = () => {
     <div>
       <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
         <FaChalkboardTeacher />
-        <h2>Student</h2>
+        <h2>Tutor</h2>
       </button>
       <li>
         <NavLink
@@ -27,6 +27,14 @@ const TutorLayout = () => {
           <RiFileListLine />
           View all study sessions
           {/* created by a tutor  */}
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/dashboard/tutorMaterials"
+          className="font-semibold text-white hover:bg-gray-800 my-1"
+        >
+          <MdStreetview /> Upload Materials
         </NavLink>
       </li>
       <li>

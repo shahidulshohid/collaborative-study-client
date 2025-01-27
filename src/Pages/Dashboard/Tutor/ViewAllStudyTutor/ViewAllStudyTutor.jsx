@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
-import { Link } from "react-router-dom";
 
 const ViewAllStudyTutor = () => {
   const { user } = useAuth();
@@ -63,13 +62,6 @@ const ViewAllStudyTutor = () => {
                   >
                     New Approval Request
                   </button>
-                )}
-                {item.status === "approved" && (
-                  <Link to={`/dashboard/uploadMaterials/${item._id}`}>
-                    <button className="btn bg-green-600 hover:bg-green-800 text-white font-semibold mt-2">
-                      Upload Materials
-                    </button>
-                  </Link>
                 )}
               </div>
             </div>
