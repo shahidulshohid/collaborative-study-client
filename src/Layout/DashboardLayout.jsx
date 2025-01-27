@@ -19,7 +19,7 @@ const DashboardLayout = () => {
       {/* responsive */}
       <div className="dropdown dropdown-hover md:hidden">
         <div tabIndex={0} role="button" className="btn m-1 text-xl font-bold">
-        <AiOutlineMenu />
+          <AiOutlineMenu />
         </div>
         <ul
           tabIndex={0}
@@ -61,6 +61,15 @@ const DashboardLayout = () => {
 
           {/* shared */}
           <div className="border-t-2"></div>
+          <li>
+            <Link
+              to="/"
+              className="font-semibold text-white hover:bg-gray-800 hover:text-white"
+            >
+              <TfiHome />
+              Home
+            </Link>
+          </li>
           <li>
             <Link
               to="/dashboard"

@@ -64,7 +64,7 @@ const TutorMaterials = () => {
             </button>
             </div>
               <Link to={`/dashboard/uploadMaterials/${item._id}`}>
-                <button className="btn bg-green-600 hover:bg-green-800 font-semibold text-lg mt-2">
+                <button className="btn bg-green-500 hover:bg-green-500 font-semibold text-lg mt-2">
                   Upload Materials
                 </button>
               </Link>
