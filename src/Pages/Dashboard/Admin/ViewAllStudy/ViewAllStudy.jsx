@@ -4,9 +4,11 @@ import ViewAllStudyModal from "../ViewAllStudyModal/ViewAllStudyModal";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import RejectedModal from "../RejectedModal/RejectedModal";
 
 const ViewAllStudy = () => {
   const [item, setItem] = useState([]);
+  const [id, setId] = useState()
   const axiosSecure = useAxiosSecure();
   const { data: session = [], refetch } = useQuery({
     queryKey: ["session"],
@@ -21,6 +23,8 @@ const ViewAllStudy = () => {
     const rejectedData = {
       status: 'rejected',
     }
+    //rejected modal
+    // document.getElementById("my_modal_2").showModal(),
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -35,6 +39,7 @@ const ViewAllStudy = () => {
           if (res.data.modifiedCount > 0) {
             console.log(res.data)
             refetch();
+            document.getElementById("my_modal_2").showModal(),
             Swal.fire({
               title: "Rejected!",
               text: "Status rejected and removed is successfully.",
@@ -44,6 +49,7 @@ const ViewAllStudy = () => {
         });
       }
     });
+    
   }
   
   const handleDelete = (id) => {
@@ -113,7 +119,9 @@ const ViewAllStudy = () => {
                         Approved
                       </button>
                       <button
-                        onClick={() => handleRejecting(item._id)}
+                        onClick={() =>{ handleRejecting(item._id)
+                          setId(item._id)
+                        }}
                         className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
                       >
                         Reject
@@ -136,6 +144,7 @@ const ViewAllStudy = () => {
         </table>
       </div>
       <ViewAllStudyModal item={item} refetch={refetch}></ViewAllStudyModal>
+      <RejectedModal id={id}></RejectedModal>
     </div>
   );
 };
