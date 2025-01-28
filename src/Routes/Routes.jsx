@@ -29,6 +29,7 @@ import UpdateMaterialTutor from "../Pages/Dashboard/Tutor/UpdateMaterialTutor/Up
 import ViewAllStudyMaterials from "../Pages/Dashboard/Students/ViewAllStudyMaterials/ViewAllStudyMaterials";
 import ViewAllMaterialsAdmin from "../Pages/Dashboard/Admin/ViewAllMaterialsAdming/ViewAllMaterialsAdmin";
 import TutorMaterials from "../Pages/Dashboard/Tutor/TutorHome/TutorMaterials";
+import StudentDashboard from "../Pages/Dashboard/Students/StudentHome/StudentDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -112,10 +113,6 @@ export const router = createBrowserRouter([
             },
 
             //students routes
-            // {
-            //     path:'/',
-            //     element:<StudentHome></StudentHome>
-            // },
             {
                 path:'viewBookSession',
                 element:<PrivateRoute><ViewBookSession></ViewBookSession></PrivateRoute>
@@ -143,9 +140,13 @@ export const router = createBrowserRouter([
             },
             
             {
-                index:true,
+                path:'profile',
                 element:<PrivateRoute><ProfilePage></ProfilePage></PrivateRoute>
             },
+            {
+                index:true,
+                element:<StudentDashboard></StudentDashboard>
+            }
         ]
     }
 ])
