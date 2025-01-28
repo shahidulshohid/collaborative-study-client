@@ -15,6 +15,15 @@ const ViewAllStudyTutor = () => {
     },
   });
 
+  // get rejection
+  const { data: rejectedData = [] } = useQuery({
+    queryKey: ["rejectedData"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/rejectionsData`);
+      return res.data;
+    },
+  });
+
   const handleApproval = (id) => {
     const reRequest = { status: "pending" };
     axiosSecure.patch(`/studySessionsApproval/${id}`, reRequest).then((res) => {
@@ -75,6 +84,7 @@ const ViewAllStudyTutor = () => {
                   {item.registrationFee == 0 ? "Free" : item.registrationFee}
                 </p>
                 <p>Session Duration: {item.sessionDuration} hours</p>
+                <h3>{item.description.substring(0, 100)}...</h3>
                 <button
                   className={`px-4 pb-1 font-semibold rounded-xl text-green-800 ${
                     item.status === "rejected" ? "bg-red-300" : "bg-green-300"
@@ -82,7 +92,33 @@ const ViewAllStudyTutor = () => {
                 >
                   {item.status}
                 </button>
-                <h3>{item.description.substring(0, 100)}...</h3>
+
+                {item.status === "rejected" && (
+                  <div className="mt-3">
+                    <h4 className="font-semibold text-red-500">
+                      Rejection Reason:
+                    </h4>
+                    <ul>
+                      {rejectedData
+                        .filter(
+                          (rejection) => rejection.feedbackId === item._id
+                        )
+                        .map((rejection) => (
+                          <li key={rejection._id}>
+                            <p>
+                              <strong>Reason:</strong>
+                              {rejection.rejectionReason}
+                            </p>
+                            <p>
+                              <strong>Feedback:</strong>
+                              {rejection.feedback}
+                            </p>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
+
                 {item.status === "rejected" && (
                   <button
                     onClick={() => handleApproval(item._id)}
