@@ -1,7 +1,7 @@
 import useAdmin from "../../../../Hooks/useAdmin";
 import useAuth from "../../../../Hooks/useAuth";
 
-const StudentDashboard = () => {
+const StudentHome = () => {
     const [role] = useAdmin()
     const {user} = useAuth()
     console.log(role)
@@ -15,4 +15,4 @@ const StudentDashboard = () => {
     );
 };
 
-export default StudentDashboard;
+export default StudentHome;

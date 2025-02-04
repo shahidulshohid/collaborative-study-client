@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { AiOutlineLogout } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
@@ -6,14 +6,26 @@ import AdminLayout from "./AdminLayout/AdminLayout";
 import StudentLayout from "./StudentLayout/StudentLayout";
 import TutorLayout from "./TutorLayout/TutorLayout";
 import useAdmin from "../Hooks/useAdmin";
-import { FaBars } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 import { AiOutlineMenu } from "react-icons/ai";
 import { TfiHome } from "react-icons/tfi";
+import { useEffect } from "react";
 
 const DashboardLayout = () => {
   const [role] = useAdmin();
   const { logOut } = useAuth();
+  const navigate = useNavigate()
+  useEffect(()=>{
+    if(role === 'tutor'){
+      navigate('/dashboard/tutorHome')
+    }
+    else if(role === 'student'){
+      navigate('/dashboard/studentHome')
+    }
+    else if(role === 'admin'){
+      navigate('/dashboard/adminHome')
+    }
+  }, [role])
   return (
     <div className="md:flex">
       {/* responsive */}

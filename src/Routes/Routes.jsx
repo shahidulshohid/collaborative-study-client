@@ -13,13 +13,11 @@ import ViewAllUsers from "../Pages/Dashboard/Admin/ViewAllUsers/ViewAllUsers";
 import AdminRoute from "./AdminRoute";
 import TutorRoute from "./TutorRoute";
 import PaymentPage from "../Pages/Home/Home/PaymentPage/PaymentPage";
-// import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
 import ViewDetailsPage from "../Pages/Dashboard/Students/StudentHome/ViewDetailsPage/ViewDetailsPage";
 import CreateNote from "../Pages/Dashboard/Students/CreateNote/CreateNote";
 import ManagePersonalNode from "../Pages/Dashboard/Students/ManagePersonalNote/ManagePersonalNode";
 import UpdatePersonalNotes from "../Pages/Dashboard/Students/UpdatePersonalNotes/UpdatePersonalNotes";
 import ViewAllStudyTutor from "../Pages/Dashboard/Tutor/ViewAllStudyTutor/ViewAllStudyTutor";
-// import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
 import ProfilePage from "../Pages/Shared/ProflePage/ProfilePage";
 import ViewAllStudyUpdate from "../Pages/Dashboard/Admin/ViewAllStudyUpdate/ViewAllStudyUpdate";
 import ErrorPage from "../Layout/ErrorPage";
@@ -29,7 +27,9 @@ import UpdateMaterialTutor from "../Pages/Dashboard/Tutor/UpdateMaterialTutor/Up
 import ViewAllStudyMaterials from "../Pages/Dashboard/Students/ViewAllStudyMaterials/ViewAllStudyMaterials";
 import ViewAllMaterialsAdmin from "../Pages/Dashboard/Admin/ViewAllMaterialsAdming/ViewAllMaterialsAdmin";
 import TutorMaterials from "../Pages/Dashboard/Tutor/TutorHome/TutorMaterials";
-import StudentDashboard from "../Pages/Dashboard/Students/StudentHome/StudentDashboard";
+import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
+import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
     {
@@ -64,10 +64,6 @@ export const router = createBrowserRouter([
         element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             // admin routes 
-            // {
-            //     path:'adminHome',
-            //     element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
-            // },
             {
                 path:'viewAllStudy',
                 element:<PrivateRoute><AdminRoute><ViewAllStudy></ViewAllStudy></AdminRoute></PrivateRoute>
@@ -83,6 +79,10 @@ export const router = createBrowserRouter([
             {
                 path:'viewAllMaterialsAdmin',
                 element:<PrivateRoute><AdminRoute><ViewAllMaterialsAdmin></ViewAllMaterialsAdmin></AdminRoute></PrivateRoute>
+            },
+            {
+                path:'adminHome',
+                element:<PrivateRoute><AdminRoute><AdminHome></AdminHome></AdminRoute></PrivateRoute>
             },
 
             //tutor routes
@@ -111,6 +111,10 @@ export const router = createBrowserRouter([
                 path:'updateMaterial/:id',
                 element:<PrivateRoute><TutorRoute><UpdateMaterialTutor></UpdateMaterialTutor></TutorRoute></PrivateRoute>
             },
+            {
+                path:'tutorHome',
+                element:<PrivateRoute><TutorHome></TutorHome></PrivateRoute>
+            },
 
             //students routes
             {
@@ -138,15 +142,14 @@ export const router = createBrowserRouter([
                 path:'viewAllStudyMaterials',
                 element:<PrivateRoute><ViewAllStudyMaterials></ViewAllStudyMaterials></PrivateRoute>
             },
-            
+            {
+                path:'studentHome',
+                element:<PrivateRoute><StudentHome></StudentHome></PrivateRoute>
+            },
             {
                 path:'profile',
                 element:<PrivateRoute><ProfilePage></ProfilePage></PrivateRoute>
             },
-            {
-                index:true,
-                element:<StudentDashboard></StudentDashboard>
-            }
         ]
     }
 ])

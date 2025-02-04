@@ -4,34 +4,62 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdFormatListBulleted } from "react-icons/md";
 import { MdViewInAr } from "react-icons/md";
 import { PiStudentDuotone } from "react-icons/pi";
+import { AiOutlineHome } from "react-icons/ai";
+import useAdmin from "../../Hooks/useAdmin";
 
 const StudentLayout = () => {
-    return (
-        <div>
-          <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
-          <PiStudentDuotone />
-          <h2>Student</h2>
-          </button>
-          <li>
-            <NavLink to="/dashboard/viewBookSession" className="font-semibold text-white hover:bg-gray-800 my-1">
-            <BsBook /> View booked session
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/createNote" className="font-semibold text-white hover:bg-gray-800 my-1"><FaRegEdit /> Create note</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/managePersonalNotes" className="font-semibold text-white hover:bg-gray-800 my-1">
-            <MdFormatListBulleted /> Manage personal notes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/viewAllStudyMaterials" className="font-semibold text-white hover:bg-gray-800 my-1">
-            <MdViewInAr /> View all study materials
-            </NavLink>
-          </li>
-        </div>
-    );
+  const [role] = useAdmin();
+  return (
+    <div>
+      <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
+        <PiStudentDuotone />
+        <h2>Student</h2>
+      </button>
+      {role === "student" && (
+        <li>
+          <NavLink
+            to="/dashboard/studentHome"
+            className="font-semibold text-white hover:bg-gray-800 my-1"
+          >
+            <AiOutlineHome />
+            Student Home
+          </NavLink>
+        </li>
+      )}
+      <li>
+        <NavLink
+          to="/dashboard/viewBookSession"
+          className="font-semibold text-white hover:bg-gray-800 my-1"
+        >
+          <BsBook /> View booked session
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/dashboard/createNote"
+          className="font-semibold text-white hover:bg-gray-800 my-1"
+        >
+          <FaRegEdit /> Create note
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/dashboard/managePersonalNotes"
+          className="font-semibold text-white hover:bg-gray-800 my-1"
+        >
+          <MdFormatListBulleted /> Manage personal notes
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/dashboard/viewAllStudyMaterials"
+          className="font-semibold text-white hover:bg-gray-800 my-1"
+        >
+          <MdViewInAr /> View all study materials
+        </NavLink>
+      </li>
+    </div>
+  );
 };
 
 export default StudentLayout;

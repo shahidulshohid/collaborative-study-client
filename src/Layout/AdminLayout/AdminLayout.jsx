@@ -3,14 +3,30 @@ import { HiOutlineUsers } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import { SiGooglestreetview } from "react-icons/si";
 import { GrUserAdmin } from "react-icons/gr";
+import { IoHomeOutline } from "react-icons/io5";
+import useAdmin from "../../Hooks/useAdmin";
 
 const AdminLayout = () => {
+  const [role] = useAdmin()
   return (
     <div>
       <button className="font-semibold text-lg px-3 rounded-lg bg-white text-black gap-2 my-1 ml-5 flex items-center">
         <GrUserAdmin />
         <h2>Admin</h2>
       </button>
+      {
+        role === 'admin' && (
+          <li>
+          <NavLink
+            to="/dashboard/adminHome"
+            className="font-semibold text-white hover:bg-gray-800 my-1"
+          >
+            <IoHomeOutline />
+            Admin Home
+          </NavLink>
+        </li>
+        )
+      }
       <li>
         <NavLink
           to="/dashboard/viewAllUsers"
