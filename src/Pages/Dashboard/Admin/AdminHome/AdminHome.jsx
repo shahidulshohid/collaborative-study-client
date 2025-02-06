@@ -3,10 +3,12 @@ import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { SiStudyverse } from "react-icons/si";
 import { GiExplosiveMaterials } from "react-icons/gi";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import useAuth from "../../../../Hooks/useAuth";
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
 const AdminHome = () => {
   const axiosSecure = useAxiosSecure();
+  const {user} = useAuth()
   //all users
   const { data: allUsers = [] } = useQuery({
     queryKey: ["allUsers"],
@@ -31,7 +33,6 @@ const AdminHome = () => {
       return res.data;
     },
   });
-  console.log(allStudySession);
   // chart related
   const getPath = (x, y, width, height) => {
     return `M${x},${y + height}C${x + width / 3},${y + height} ${
@@ -52,6 +53,7 @@ const AdminHome = () => {
 
   return (
     <div>
+      <h2 className="text-center text-2xl md:text-3xl font-bold text-green-500 mb-6">Hi, Welcome {user?.displayName}</h2>
       <div className="flex justify-center items-center">
         <div className="stats shadow">
           <div className="stat">
@@ -96,8 +98,7 @@ const AdminHome = () => {
       </div>
 
       {/* chart related  */}
-      <h3 className="text-center text-2xl md:text-3xl font-semibold mt-8 mb-2">Chart of Registration fee</h3>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-6">
       <BarChart
         width={500}
         height={300}

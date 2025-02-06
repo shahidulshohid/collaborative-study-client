@@ -1,7 +1,6 @@
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import { MdOutlineDelete } from "react-icons/md";
 import { useState } from "react";
 
 const ViewAllUsers = () => {
@@ -140,7 +139,7 @@ const ViewAllUsers = () => {
                       onClick={() => handleDelete(user._id)}
                       className="bg-red-400 px-2 md:px-4 py-1 text-white rounded-lg"
                     >
-                      <MdOutlineDelete size={25} />
+                      Delete
                     </button>
                   </div>
                 </td>
