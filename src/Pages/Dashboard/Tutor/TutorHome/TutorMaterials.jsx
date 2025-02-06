@@ -25,7 +25,7 @@ const TutorMaterials = () => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
         {allStudySession?.map((item) => (
-          <div key={item._id} className="space-y-2 w-full bg-pink-100 p-3">
+          <div key={item._id} className="space-y-2 w-full border-2 p-3">
             <div>
               <img
                 className="w-full h-[200px] object-cover"
