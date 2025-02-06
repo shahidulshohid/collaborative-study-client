@@ -46,7 +46,7 @@ const ViewAllStudyTutor = () => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {session?.map((item) => (
-          <div key={item._id} className="border p-3 rounded-xl bg-pink-100">
+          <div key={item._id} className="border-2 p-3 rounded-xl">
             <div>
               <img
                 className="h-[200px] w-full object-cover rounded-xl"

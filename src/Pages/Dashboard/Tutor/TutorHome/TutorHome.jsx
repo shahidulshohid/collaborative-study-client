@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../Hooks/useAuth";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { PieChart, Pie, Cell } from "recharts";
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const TutorHome = () => {
   const { user } = useAuth();
@@ -15,6 +14,11 @@ const TutorHome = () => {
     },
   });
   // pieChart
+  const COLORS = {
+    approved: "#00C49F",
+    pending: "#FFBB28",
+    rejected: "#FF0000",
+  };
   const statusCount = allStudySession.reduce((acc, session) => {
     acc[session.status] = (acc[session.status] || 0) + 1;
     return acc;
@@ -44,7 +48,7 @@ const TutorHome = () => {
             {pieChartData.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
+                fill={COLORS[entry.name] || "#0088FE"}
               />
             ))}
           </Pie>
