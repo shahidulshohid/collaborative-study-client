@@ -31,8 +31,8 @@ const AdminHome = () => {
       return res.data;
     },
   });
-  console.log(allStudySession)
-
+  console.log(allStudySession);
+  // chart related
   const getPath = (x, y, width, height) => {
     return `M${x},${y + height}C${x + width / 3},${y + height} ${
       x + width / 2
@@ -51,52 +51,57 @@ const AdminHome = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div className="stats shadow">
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <GiExplosiveMaterials size={25} />
+    <div>
+      <div className="flex justify-center items-center">
+        <div className="stats shadow">
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <GiExplosiveMaterials size={25} />
+            </div>
+            <div className="stat-title">All materials</div>
+            <div className="stat-value">{allMaterials.length}</div>
+            <div className="stat-desc">↗︎ 45 (6%)</div>
           </div>
-          <div className="stat-title">All materials</div>
-          <div className="stat-value">{allMaterials.length}</div>
-          <div className="stat-desc">↗︎ 45 (6%)</div>
-        </div>
 
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block h-8 w-8 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-              ></path>
-            </svg>
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="inline-block h-8 w-8 stroke-current"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                ></path>
+              </svg>
+            </div>
+            <div className="stat-title">All Users</div>
+            <div className="stat-value">{allUsers.length}</div>
+            <div className="stat-desc">↗︎ 40 (2%)</div>
           </div>
-          <div className="stat-title">All Users</div>
-          <div className="stat-value">{allUsers.length}</div>
-          <div className="stat-desc">↗︎ 40 (2%)</div>
-        </div>
 
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <SiStudyverse size={30} />
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <SiStudyverse size={30} />
+            </div>
+            <div className="stat-title">All Study Session</div>
+            <div className="stat-value">{allStudySession.length}</div>
+            <div className="stat-desc">↘︎ 90 (14%)</div>
           </div>
-          <div className="stat-title">All Study Session</div>
-          <div className="stat-value">{allStudySession.length}</div>
-          <div className="stat-desc">↘︎ 90 (14%)</div>
         </div>
       </div>
-      {/* bard Chart */}
+
+      {/* chart related  */}
+      <h3 className="text-center text-2xl md:text-3xl font-semibold mt-8 mb-2">Chart of Registration fee</h3>
+      <div className="flex justify-center items-center">
       <BarChart
         width={500}
         height={300}
-        allStudySession={allStudySession}
+        data={allStudySession}
         margin={{
           top: 20,
           right: 30,
@@ -105,7 +110,7 @@ const AdminHome = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="title" />
         <YAxis />
         <Bar
           dataKey="registrationFee"
@@ -113,11 +118,12 @@ const AdminHome = () => {
           shape={<TriangleBar />}
           label={{ position: "top" }}
         >
-          {allStudySession.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 10]} />
+          {allStudySession?.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index % 6]} />
           ))}
         </Bar>
       </BarChart>
+      </div>
     </div>
   );
 };
