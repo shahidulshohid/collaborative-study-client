@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Banner = () => {
   return (
-    <div>
+    <div className='-mt-2'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -32,7 +32,7 @@ const Banner = () => {
             className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg1})`,
-              height: "380px",
+              height: "400px",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -45,7 +45,7 @@ const Banner = () => {
             className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg2})`,
-              height: "380px",
+              height: "400px",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -58,7 +58,7 @@ const Banner = () => {
             className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg3})`,
-              height: "380px",
+              height: "400px",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -71,7 +71,7 @@ const Banner = () => {
             className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg4})`,
-              height: "380px",
+              height: "400px",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -84,7 +84,7 @@ const Banner = () => {
             className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg5})`,
-              height: "380px",
+              height: "400px",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -97,7 +97,7 @@ const Banner = () => {
             className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg6})`,
-              height: "380px",
+              height: "400px",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
