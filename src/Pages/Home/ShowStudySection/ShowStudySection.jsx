@@ -18,7 +18,7 @@ const ShowStudySection = () => {
   return (
     <div className="my-12">
         <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">Show Study Session</h3>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {session?.map((item) => (
         <div key={item._id}>
           <div>
@@ -46,7 +46,7 @@ const ShowStudySection = () => {
                   )}
                 </p>
               </div>
-              <Link to={`readMore/${item._id}`}><button className="px-5 py-1 bg-blue-500 text-white rounded-sm text-lg mt-3">Read More</button></Link>
+              <Link to={`readMore/${item._id}`}><button className="px-5 py-1 bg-[#3939c8] text-white rounded-md text-lg mt-3">Read More</button></Link>
             </div>
           </div>
         </div>
