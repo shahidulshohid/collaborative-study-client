@@ -17,7 +17,7 @@ const ShowStudySection = () => {
 
   return (
     <div className="my-16">
-        <h3 className="text-center text-2xl text-[#3939c8] md:text-3xl font-semibold my-5 dark:text-white">Show Study Session</h3>
+        <h3 className="text-center text-2xl text-[#3939c8] md:text-3xl font-semibold mt-5 dark:text-white mb-8">Show Study Session</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {session?.map((item) => (
         <div key={item._id}>
