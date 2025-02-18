@@ -8,7 +8,7 @@ const TopTutors = () => {
     .then(data => setTutors(data.tutors))
   }, [])
   return (
-    <div className="my-16">
+    <div className="my-16" id="topTutors">
       <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white">Top Tutors</h2>
       <p className="text-center mb-8 dark:text-white">
         Learn from the best! Our top-rated tutors are here to guide you.

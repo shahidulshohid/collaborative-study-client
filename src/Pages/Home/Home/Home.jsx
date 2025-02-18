@@ -7,6 +7,7 @@ import StudyFeature from "./StudyFeature/StudyFeature";
 import TopTutors from "./ToTutorsSection/TopTutorsSection";
 import FaqSection from "./FaqSection/FaqSection";
 import HelpDesk from "./HelpDesk/HelpDesk";
+import StudyServices from "./StudyServices/StudyServices";
 
 const Home = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
         <StudyFeature></StudyFeature>
         <TopTutors></TopTutors>
         <FaqSection></FaqSection>
+        <StudyServices></StudyServices>
         <HelpDesk></HelpDesk>
       </Container>
     </div>
