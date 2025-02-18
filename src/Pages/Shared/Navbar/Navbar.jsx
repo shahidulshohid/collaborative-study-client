@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Container from "../Container/Container";
 import defaultImg from "../../../assets/defaultImg.jpg";
@@ -24,7 +24,7 @@ const Navbar = () => {
         <Container>
           <div className="flex flex-row  items-center justify-between gap-3 md:gap-0">
             {/* Logo */}
-            <Link to="/">
+            <Link to="/" className="flex items-center gap-2">
               <img
                 className="w-10 h-10 rounded-full"
                 src={logo}
@@ -32,7 +32,15 @@ const Navbar = () => {
                 width="100"
                 height="100"
               />
+              <h3 className="hidden lg:flex text-2xl font-bold text-white">Study Sphere</h3>
             </Link>
+            <div className="hidden md:flex items-center gap-5 text-white text-xl">
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/about">About</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/profile">Profile</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+            </div>
             {/* Dropdown Menu */}
             <div className="relative">
               <div className="flex flex-row items-center gap-3">

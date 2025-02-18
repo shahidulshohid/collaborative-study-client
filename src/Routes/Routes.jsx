@@ -30,6 +30,8 @@ import TutorMaterials from "../Pages/Dashboard/Tutor/TutorHome/TutorMaterials";
 import StudentHome from "../Pages/Dashboard/Students/StudentHome/StudentHome";
 import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
+import AboutPage from "../Pages/AboutPage/AboutPage";
+import ContactPage from "../Pages/ContactPage/ContactPage";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +50,14 @@ export const router = createBrowserRouter([
             {
                 path:'paymentPage/:id',
                 element: <PaymentPage></PaymentPage>
+            },
+            {
+                path:'/about',
+                element:<AboutPage></AboutPage>
+            },
+            {
+                path:'/contact',
+                element:<ContactPage></ContactPage>
             }
         ]
     },

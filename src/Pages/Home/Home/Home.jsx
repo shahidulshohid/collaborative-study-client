@@ -11,7 +11,7 @@ import StudyServices from "./StudyServices/StudyServices";
 
 const Home = () => {
   useEffect(() => {
-    window.document.title = "Home" || "StudySphere"
+    window.document.title = "Home page" || "StudySphere"
   }, [])
   return (
     <div>
