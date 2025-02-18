@@ -79,7 +79,7 @@ const ReadMorePage = () => {
   // filter all review data from study session by session id 
   const filterReviews = reviews?.filter(review => review.studySessionId == _id)
   return (
-    <div className="mt-16">
+    <div className="mt-16 dark:bg-white dark:py-12">
       <Container>
         <div className="md:flex gap-10">
           <div className="mb-5 md:mb-0">

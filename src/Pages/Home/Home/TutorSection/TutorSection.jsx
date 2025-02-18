@@ -13,13 +13,13 @@ const TutorSection = () => {
     })
     return (
         <div className="mb-16">
-            <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">All Tutors</h3>
+            <h3 className="text-center text-2xl md:text-3xl font-semibold my-5 dark:text-white">All Tutors</h3>
             <Marquee>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {
                     tutors?.map(tutor => (
                         <div key={tutor._id}>
-                            <div className="flex border-2 items-center gap-3 rounded-full w-full p-2">
+                            <div className="flex border-2 items-center gap-3 rounded-full w-full p-2 dark:bg-white">
                                 <img className="h-[80px] w-[80px] object-cover rounded-full" src={tutor.photo} alt="" />
                                 <div>
                                     <h3 className="text-sm">Name: {tutor.name}</h3>

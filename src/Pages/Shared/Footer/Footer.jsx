@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const Footer = () => {
   return (
-    <div className="my-16 bg-gray-800">
+    <div className="my-16 bg-gray-800 dark:bg-[#3939c8]">
       <Container>
         <footer className=" lg:p-10 pt-5">
           <div className="md:flex justify-between">

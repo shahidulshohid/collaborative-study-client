@@ -17,7 +17,7 @@ const ShowStudySection = () => {
 
   return (
     <div className="my-16">
-        <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">Show Study Session</h3>
+        <h3 className="text-center text-2xl md:text-3xl font-semibold my-5 dark:text-white">Show Study Session</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {session?.map((item) => (
         <div key={item._id}>
@@ -27,7 +27,7 @@ const ShowStudySection = () => {
               src={item.image}
               alt=""
             />
-            <div className="p-3 border border-t-0 space-y-1">
+            <div className="p-3 border border-t-0 space-y-1 dark:bg-white">
               <h3 className="text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-500">{item.description.substring(0, 100)}...</p>
               <div className="flex items-center gap-1">
