@@ -6,7 +6,7 @@ const MainLayout = () => {
   const location = useLocation();
   const noHeaderFooter = location.pathname.includes("login");
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-800">
       {noHeaderFooter || <Navbar></Navbar>}
       <div className="pt-24 min-h-[calc(100vh-68px)]">
         <Outlet></Outlet>
