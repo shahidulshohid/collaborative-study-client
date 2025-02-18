@@ -23,11 +23,11 @@ const ShowStudySection = () => {
         <div key={item._id}>
           <div>
             <img
-              className="h-[250px] w-full object-cover"
+              className="h-[250px] w-full object-cover rounded-t-lg"
               src={item.image}
               alt=""
             />
-            <div className="p-3 border border-t-0 space-y-1 dark:bg-white">
+            <div className="p-3 border border-t-0 space-y-1 dark:bg-white rounded-b-lg">
               <h3 className="text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-500">{item.description.substring(0, 100)}...</p>
               <div className="flex items-center gap-1">

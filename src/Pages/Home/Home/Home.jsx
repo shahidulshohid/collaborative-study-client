@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import ShowStudySection from "../ShowStudySection/ShowStudySection";
 import TutorSection from "./TutorSection/TutorSection";
 import StudyFeature from "./StudyFeature/StudyFeature";
+import TopTutors from "./ToTutorsSection/TopTutorsSection";
 
 const Home = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const Home = () => {
         <ShowStudySection></ShowStudySection>
         <TutorSection></TutorSection>
         <StudyFeature></StudyFeature>
+        <TopTutors></TopTutors>
       </Container>
     </div>
   );

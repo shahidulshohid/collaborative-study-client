@@ -1,0 +1,68 @@
+{
+  "tutors": [
+  {
+    "id": 1,
+    "name": "John Doe",
+    "image": "https://i.ibb.co.com/FxsdwZP/smiling-holding-books-young-teacher-standing-front-blackboard-classroom-1491793-136547.jpg",
+    "specialization": "Mathematics Expert",
+    "rating": 4.9,
+    "shortBio": "Experienced Math teacher with over 10 years of tutoring..."
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "image": "https://i.ibb.co.com/jM1dMSQ/smiling-showing-thumb-up-male-teacher-wearing-glasses-holding-abacus-sitting-table-with-school-tools.jpg",
+    "specialization": "Physics Tutor",
+    "rating": 4.8,
+    "shortBio": "Passionate about teaching Physics with interactive methods..."
+  },
+  {
+    "id": 3,
+    "name": "David Lee",
+    "image": "https://i.ibb.co.com/YRN1rLN/teacher-brunette-instructor-with-computer-suit-whiteboard-classroom-point7ing-board-140725-163269.jpg",
+    "specialization": "Chemistry Specialist",
+    "rating": 4.7,
+    "shortBio": "Helping students excel in Chemistry with practical examples."
+  },
+  {
+    "id": 4,
+    "name": "Maria Garcia",
+    "image": "https://i.ibb.co.com/FqVTbJcm/portrait-female-teacher-holding-notepad-gree4n-140725-149626.jpg",
+    "specialization": "English Language Coach",
+    "rating": 4.9,
+    "shortBio": "Expert in English Literature and Language teaching."
+  },
+  {
+    "id": 5,
+    "name": "Ahmed Khan",
+    "image": "https://i.ibb.co.com/qM4n9cKh/profile-side-view-portrait-her-she-nice-attractive-content-classy-intellectual-cheerful-librarian-we.jpg",
+    "specialization": "Computer Science Mentor",
+    "rating": 4.8,
+    "shortBio": "Specialized in teaching programming and algorithms."
+  },
+  {
+    "id": 6,
+    "name": "Liu Wei",
+    "image": "https://i.ibb.co.com/mSNrM8z/education-teachers-university-schools-conc3ept-young-smiling-woman-employer-student-glasses-1258-608.jpg",
+    "specialization": "Biology Educator",
+    "rating": 4.7,
+    "shortBio": "Making Biology fun and easy to understand for all students."
+  },
+  {
+    "id": 7,
+    "name": "Sophia Martinez",
+    "image": "https://i.ibb.co.com/nzrfzDf/college-student-3500990-1280.jpg",
+    "specialization": "History Teacher",
+    "rating": 4.6,
+    "shortBio": "Passionate about making History interesting and engaging."
+  },
+  {
+    "id": 8,
+    "name": "Michael Brown",
+    "image": "https://i.ibb.co.com/tMzNQfss/portrait-teacher-blackboard-classroom-85574-12172.jpg",
+    "specialization": "Economics Instructor",
+    "rating": 4.9,
+    "shortBio": "Expert in teaching Economics with real-world applications."
+  }
+]
+}
