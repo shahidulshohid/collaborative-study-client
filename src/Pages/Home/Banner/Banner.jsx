@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Banner = () => {
   return (
-    <div className='-mt-2'>
+    <div className='-mt-8'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -38,6 +38,13 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+          <div className='text-center text-white space-y-3'>
+            <h2 className='text-3xl md:text-6xl font-bold'>All Study</h2>
+            <h3 className='text-3xl md:5xl font-semibold'>Multipurpose Education Platform</h3>
+            <div>
+              <button className='px-8 py-2 border-2 text-lg font-semibold rounded-lg hover:bg-white hover:text-black'>FEATURE</button>
+            </div>
+          </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -51,6 +58,13 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+            <div className='text-center text-white space-y-3'>
+              <h2 className='text-3xl md:text-6xl font-bold'>All Study</h2>
+              <h3 className='text-3xl md:5xl font-semibold'>Multipurpose Education Platform</h3>
+              <div>
+                <button className='px-8 py-2 border-2 text-lg font-semibold rounded-lg hover:bg-white hover:text-black'>FEATURE</button>
+              </div>
+            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -64,6 +78,13 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+          <div className='text-center text-white space-y-3'>
+            <h2 className='text-3xl md:text-6xl font-bold'>All Study</h2>
+            <h3 className='text-3xl md:5xl font-semibold'>Multipurpose Education Platform</h3>
+            <div>
+              <button className='px-8 py-2 border-2 text-lg font-semibold rounded-lg hover:bg-white hover:text-black'>FEATURE</button>
+            </div>
+          </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -77,6 +98,13 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+          <div className='text-center text-white space-y-3'>
+            <h2 className='text-3xl md:text-6xl font-bold'>All Study</h2>
+            <h3 className='text-3xl md:5xl font-semibold'>Multipurpose Education Platform</h3>
+            <div>
+              <button className='px-8 py-2 border-2 text-lg font-semibold rounded-lg hover:bg-white hover:text-black'>FEATURE</button>
+            </div>
+          </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -90,6 +118,13 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+          <div className='text-center text-white space-y-3'>
+            <h2 className='text-3xl md:text-6xl font-bold'>All Study</h2>
+            <h3 className='text-3xl md:5xl font-semibold'>Multipurpose Education Platform</h3>
+            <div>
+              <button className='px-8 py-2 border-2 text-lg font-semibold rounded-lg hover:bg-white hover:text-black'>FEATURE</button>
+            </div>
+          </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -103,6 +138,13 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+          <div className='text-center text-white space-y-3'>
+            <h2 className='text-3xl md:text-6xl font-bold'>All Study</h2>
+            <h3 className='text-3xl md:5xl font-semibold'>Multipurpose Education Platform</h3>
+            <div>
+              <button className='px-8 py-2 border-2 text-lg font-semibold rounded-lg hover:bg-white hover:text-black'>FEATURE</button>
+            </div>
+          </div>
           </div>
         </SwiperSlide>
       </Swiper>

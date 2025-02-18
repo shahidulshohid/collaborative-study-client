@@ -12,13 +12,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='fixed w-full bg-white z-10 shadow-sm'>
-      <div className='pb-1'>
+    <div className='fixed w-full bg-green-500 z-10 shadow-sm'>
+      <div className='py-3'>
         <Container>
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
             <Link to='/'>
-              <img className=" w-20 h-20 rounded-xl" src={logo} alt='logo' width='100' height='100' />
+              <img className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" src={logo} alt='logo' width='100' height='100' />
             </Link>
             {/* Dropdown Menu */}
             <div className='relative'>
