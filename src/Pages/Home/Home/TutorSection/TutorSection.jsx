@@ -12,7 +12,7 @@ const TutorSection = () => {
         }
     })
     return (
-        <div className="mb-12">
+        <div className="mb-16">
             <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">All Tutors</h3>
             <Marquee>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
