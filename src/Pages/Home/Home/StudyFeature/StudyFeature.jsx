@@ -2,7 +2,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const StudyFeature = () => {
     return (
         <div className="my-16" id="feature">
-            <h3 className="text-center text-2xl md:text-3xl font-semibold mt-5 dark:text-white">Study Feature</h3>
+            <h3 className="text-center text-2xl text-[#3939c8] md:text-3xl font-semibold mt-5 dark:text-white">Study Feature</h3>
             <p className="text-center mb-5 dark:text-white">There are so many reasons to choose Study, here are a few items: </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div className="space-y-3 dark:text-white">

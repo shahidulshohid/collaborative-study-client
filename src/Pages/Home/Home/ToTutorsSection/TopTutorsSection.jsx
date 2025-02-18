@@ -8,13 +8,13 @@ const TopTutors = () => {
     .then(data => setTutors(data.tutors))
   }, [])
   return (
-    <div className="my-12">
-      <h2 className="text-center text-2xl md:text-3xl font-semibold dark:text-white">Top Tutors</h2>
+    <div className="my-16">
+      <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white">Top Tutors</h2>
       <p className="text-center mb-8 dark:text-white">
         Learn from the best! Our top-rated tutors are here to guide you.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {tutors.map((tutor) => (
           <div key={tutor.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
