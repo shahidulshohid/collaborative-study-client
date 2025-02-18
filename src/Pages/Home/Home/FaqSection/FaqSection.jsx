@@ -1,9 +1,13 @@
 const FaqSection = () => {
   return (
     <div className="my-16">
-      <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white mb-8">
-        Faq's
+      <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white">
+        FAQ's
       </h2>
+      <p className="text-center mb-8 dark:text-white max-w-xl mx-auto">
+        Find answers to common questions about our study sessions, enrollment,
+        and more. Still have queries? Contact our support team!
+      </p>
       <div className="bg-base-200 rounded-lg">
         <div
           tabIndex={0}
