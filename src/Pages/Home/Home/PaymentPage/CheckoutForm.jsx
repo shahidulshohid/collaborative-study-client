@@ -88,7 +88,7 @@ const CheckoutForm = ({ handleSessionBooked }) => {
     });
   };
   return (
-    <div className="max-w-3xl mx-auto mt-20">
+    <div className="max-w-3xl mx-auto">
       <Container>
         <h1 className="text-xl md:text-3xl font-semibold text-center">
           Payment

@@ -36,7 +36,7 @@ const CreateNote = () => {
         notes with a simple and intuitive interface tailored for effective
         learning
       </p>
-      <div className="bg-[#d0e293] px-3 py-5 md:px-5 md:py-8 rounded-lg w-3/4 mx-auto">
+      <div className="px-3 py-5 md:px-5 md:py-8 rounded-lg w-3/4 mx-auto">
         <form onSubmit={handleNoteSubmit}>
           <div>
             <label>Student Email</label>
