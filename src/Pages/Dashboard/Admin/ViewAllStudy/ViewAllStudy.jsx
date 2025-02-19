@@ -8,8 +8,9 @@ import RejectedModal from "../RejectedModal/RejectedModal";
 
 const ViewAllStudy = () => {
   const [item, setItem] = useState([]);
-  const [id, setId] = useState()
+  const [id, setId] = useState();
   const axiosSecure = useAxiosSecure();
+  const [sort, setSort] = useState("acc");
   const { data: session = [], refetch } = useQuery({
     queryKey: ["session"],
     queryFn: async () => {
@@ -17,12 +18,13 @@ const ViewAllStudy = () => {
       return res?.data;
     },
   });
-  
-  // handle reject button 
+  const [sortData, setSortData] = useState(session)
+
+  // handle reject button
   const handleRejecting = (id) => {
     const rejectedData = {
-      status: 'rejected',
-    }
+      status: "rejected",
+    };
     //rejected modal
     // document.getElementById("my_modal_2").showModal(),
     Swal.fire({
@@ -35,23 +37,24 @@ const ViewAllStudy = () => {
       confirmButtonText: "Yes, reject and remove it!",
     }).then((result) => {
       if (result.isConfirmed) {
-    axiosSecure.patch(`/studySession/rejected/${id}`, rejectedData).then((res) => {
-          if (res.data.modifiedCount > 0) {
-            console.log(res.data)
-            refetch();
-            document.getElementById("my_modal_2").showModal(),
-            Swal.fire({
-              title: "Rejected!",
-              text: "Status rejected and removed is successfully.",
-              icon: "success",
-            });
-          }
-        });
+        axiosSecure
+          .patch(`/studySession/rejected/${id}`, rejectedData)
+          .then((res) => {
+            if (res.data.modifiedCount > 0) {
+              console.log(res.data);
+              refetch();
+              document.getElementById("my_modal_2").showModal(),
+                Swal.fire({
+                  title: "Rejected!",
+                  text: "Status rejected and removed is successfully.",
+                  icon: "success",
+                });
+            }
+          });
       }
     });
-    
-  }
-  
+  };
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -76,13 +79,21 @@ const ViewAllStudy = () => {
       }
     });
   };
+
+  const handleSort = () => {
+    const sessionData = [...session].sort((a, b) =>
+      sort === "asc" ? a.registrationFee - b.registrationFee : b.registrationFee - a.registrationFee
+  );
+  setSortData(sessionData);
+    setSort(sort === "asc" ? "desc" : "asc");
+  };
   return (
     <div>
-      <div className="flex justify-between items-center">
-      <h3 className="text-2xl md:text-3xl font-semibold my-5 dark:text-white">
-        View All Study Session
-      </h3>
-      <button className="btn bg-primary text-white text-lg">sdfsdf</button>
+      <div className="md:flex justify-between items-center text-center my-5">
+        <h3 className="text-2xl md:text-3xl font-semibold dark:text-white mb-2 md:mb-0">
+          View All Study Session
+        </h3>
+        <button className="btn text-lg text-white bg-[#3939c8] hover:bg-[#3939c8]" onClick={handleSort}>Sorted by ({sort === "asc" ? "Descending " : "Ascending"})</button>
       </div>
       <div className="overflow-x-auto bg-gray-100">
         <table className="table table-zebra">
@@ -100,7 +111,7 @@ const ViewAllStudy = () => {
             </tr>
           </thead>
           <tbody>
-            {session?.map((item) => (
+            {sortData?.map((item) => (
               <tr key={item._id}>
                 <th></th>
                 <td className="font-semibold">{item.title}</td>
@@ -122,8 +133,9 @@ const ViewAllStudy = () => {
                         Approved
                       </button>
                       <button
-                        onClick={() =>{ handleRejecting(item._id)
-                          setId(item._id)
+                        onClick={() => {
+                          handleRejecting(item._id);
+                          setId(item._id);
                         }}
                         className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
                       >
@@ -131,15 +143,21 @@ const ViewAllStudy = () => {
                       </button>
                     </div>
                   )}
-                  {
-                    item.status === "approved" && (
-                      <div className="flex items-center gap-3 md:gap-5">
-                        <Link to={`/dashboard/updateViewAllStudy/${item._id}`}>
-                        <button className="py-1 px-4 bg-green-800 text-white font-semibold rounded-lg">Update</button></Link>
-                        <button onClick={() => handleDelete(item._id)} className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg">Delete</button>
-                      </div>
-                    )
-                  }
+                  {item.status === "approved" && (
+                    <div className="flex items-center gap-3 md:gap-5">
+                      <Link to={`/dashboard/updateViewAllStudy/${item._id}`}>
+                        <button className="py-1 px-4 bg-green-800 text-white font-semibold rounded-lg">
+                          Update
+                        </button>
+                      </Link>
+                      <button
+                        onClick={() => handleDelete(item._id)}
+                        className="py-1 px-3 bg-red-400 text-white font-semibold rounded-lg"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}
