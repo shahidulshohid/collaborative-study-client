@@ -38,8 +38,10 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/about">About</NavLink>
               <NavLink to="/contact">Contact</NavLink>
-              <NavLink to="/profile">Profile</NavLink>
-              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/meetTeam">Meet Our Team</NavLink>
+              {user && (
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              )}
             </div>
             {/* Dropdown Menu */}
             <div className="relative">

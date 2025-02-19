@@ -1,0 +1,107 @@
+[
+    {
+      "id": 1,
+      "name": "Dr. John Doe",
+      "role": "Professor of Mathematics",
+      "bio": "Renowned scholar in Pure and Applied Mathematics with extensive research in algebra and calculus.",
+      "experience": "15+ years",
+      "location": "New York, USA",
+      "education": "Ph.D. in Mathematics",
+      "subjects": ["Algebra", "Calculus", "Linear Algebra", "Statistics"],
+      "email": "john.doe@example.com",
+      "image": "https://i.ibb.co.com/GQCmBXf8/young-redhead-business-man-pointing-side-with-finger-1187-20078.jpg",
+      "linkedin": "https://linkedin.com/in/johndoe"
+    },
+    {
+      "id": 2,
+      "name": "Prof. Jane Smith",
+      "role": "Senior Lecturer in English",
+      "bio": "Expert in literature and linguistics, focusing on modern and classical English literature.",
+      "experience": "12 years",
+      "location": "London, UK",
+      "education": "M.A. in English Literature",
+      "subjects": ["English Literature", "Linguistics", "Creative Writing"],
+      "email": "jane.smith@example.com",
+      "image": "https://i.ibb.co.com/spqpdsbB/young-bearded-man-blue-shirt-holding-book-smiling-showing-thumbs-up-141793-37101.jpg",
+      "linkedin": "https://linkedin.com/in/janesmith"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Michael Johnson",
+      "role": "Associate Professor of Bangla",
+      "bio": "Dedicated to research in Bengali literature, linguistics, and historical poetry.",
+      "experience": "10 years",
+      "location": "Dhaka, Bangladesh",
+      "education": "Ph.D. in Bangla Language and Literature",
+      "subjects": ["Bangla Grammar", "Bengali Poetry", "Linguistics", "Modern Literature"],
+      "email": "michael.johnson@example.com",
+      "image": "https://i.ibb.co.com/zh7pbD6P/man-blue-suit-with-pencil-his-hand-stands-front-green-board-1239757-5676.jpg",
+      "linkedin": "https://linkedin.com/in/michaeljohnson"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Alice Brown",
+      "role": "Professor of Physics",
+      "bio": "Researcher in quantum mechanics and astrophysics, passionate about physics education.",
+      "experience": "18 years",
+      "location": "Toronto, Canada",
+      "education": "Ph.D. in Physics",
+      "subjects": ["Quantum Mechanics", "Thermodynamics", "Electromagnetism"],
+      "email": "alice.brown@example.com",
+      "image": "https://i.ibb.co.com/MD8qTmky/person-makes-some-notes-notepad-140725-7919.jpg",
+      "linkedin": "https://linkedin.com/in/alicebrown"
+    },
+    {
+      "id": 5,
+      "name": "Prof. David Lee",
+      "role": "Senior Lecturer in Computer Science",
+      "bio": "Specializes in artificial intelligence, data structures, and programming methodologies.",
+      "experience": "8 years",
+      "location": "Sydney, Australia",
+      "education": "M.Sc. in Computer Science",
+      "subjects": ["Artificial Intelligence", "Data Structures", "Software Engineering"],
+      "email": "david.lee@example.com",
+      "image": "https://i.ibb.co.com/QjPzNyXx/young-man-is-ready-drawing-business-strategy-329181-680.jpg",
+      "linkedin": "https://linkedin.com/in/davidlee"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Emily Green",
+      "role": "Lecturer in History",
+      "bio": "Expert in ancient civilizations, with a focus on Roman and Greek history.",
+      "experience": "9 years",
+      "location": "Berlin, Germany",
+      "education": "Ph.D. in History",
+      "subjects": ["Ancient Civilizations", "Roman History", "Greek History"],
+      "email": "emily.green@example.com",
+      "image": "https://i.ibb.co.com/Df0DFF0M/businessman-black-suit-holding-his-tasklist-makes-thumb-up-114579-15902.jpg",
+      "linkedin": "https://linkedin.com/in/emilygreen"
+    },
+    {
+      "id": 7,
+      "name": "Dr. Robert White",
+      "role": "Professor of Chemistry",
+      "bio": "Focuses on organic chemistry and sustainable energy solutions.",
+      "experience": "14 years",
+      "location": "Chicago, USA",
+      "education": "Ph.D. in Organic Chemistry",
+      "subjects": ["Organic Chemistry", "Biochemistry", "Environmental Chemistry"],
+      "email": "robert.white@example.com",
+      "image": "https://i.ibb.co.com/4nLz2ZGJ/photo-1566753323558-f4e0952af115.jpg",
+      "linkedin": "https://linkedin.com/in/robertwhite"
+    },
+    {
+      "id": 8,
+      "name": "Prof. Laura Harris",
+      "role": "Professor of Psychology",
+      "bio": "Passionate about human behavior and cognitive science, specializing in clinical psychology.",
+      "experience": "20+ years",
+      "location": "Los Angeles, USA",
+      "education": "Ph.D. in Psychology",
+      "subjects": ["Clinical Psychology", "Cognitive Science", "Behavioral Therapy"],
+      "email": "laura.harris@example.com",
+      "image": "https://i.ibb.co.com/20gFm96P/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.jpg",
+      "linkedin": "https://linkedin.com/in/lauraharris"
+    }
+  ]
+  

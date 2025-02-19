@@ -32,6 +32,7 @@ import TutorHome from "../Pages/Dashboard/Tutor/TutorHome/TutorHome";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome/AdminHome";
 import AboutPage from "../Pages/AboutPage/AboutPage";
 import ContactPage from "../Pages/ContactPage/ContactPage";
+import MeetOurTeam from "../Pages/MeetOurTeam/MeetOurTeam";
 
 export const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contact',
                 element:<ContactPage></ContactPage>
+            },
+            {
+                path:'/meetTeam',
+                element:<MeetOurTeam></MeetOurTeam>
             }
         ]
     },

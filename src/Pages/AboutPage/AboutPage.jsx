@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import university from "../../assets/university.jpg";
 import whyChooseUs from "../../assets/whyChoose.png";
 
 const About = () => {
+  useEffect(() => {
+    window.document.title = "About page" || "StudySphere";
+  }, []);
   return (
-    <div className="py-12">
+    <div className="pt-12">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white">
@@ -131,71 +135,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Meet the Team */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h2 className="text-3xl font-semibold mb-3 text-blue-500">
-            Meet Our Team
-          </h2>
-          <div className="flex justify-around">
-            <div className="text-center">
-              <img
-                src="team-member.jpg"
-                alt="Shahidul Islam"
-                className="rounded-full mb-3 w-24 h-24 mx-auto"
-              />
-              <h3 className="font-semibold text-xl">Shahidul Islam</h3>
-              <p>Founder & CEO</p>
-              <p className="text-gray-600">
-                Passionate about web development and dedicated to building a
-                better learning experience.
-              </p>
-            </div>
-            <div className="text-center">
-              <img
-                src="team-member2.jpg"
-                alt="Team Member"
-                className="rounded-full mb-3 w-24 h-24 mx-auto"
-              />
-              <h3 className="font-semibold text-xl">John Doe</h3>
-              <p>Lead Developer</p>
-              <p className="text-gray-600">
-                Expert in creating scalable web applications with a focus on
-                user experience.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Contact Section */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-3xl font-semibold mb-3 text-blue-500">
-            Contact Us
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Have questions or need assistance? Feel free to reach out to us!
-          </p>
-          <p>
-            <strong>Email:</strong>{" "}
-            <a href="mailto:info@studysphere.com" className="text-blue-600">
-              info@studysphere.com
-            </a>
-          </p>
-          <p>
-            <strong>Follow Us:</strong>
-            <a href="#" className="text-blue-600 ml-2">
-              Facebook
-            </a>{" "}
-            |
-            <a href="#" className="text-blue-600 ml-2">
-              Twitter
-            </a>{" "}
-            |
-            <a href="#" className="text-blue-600 ml-2">
-              LinkedIn
-            </a>
-          </p>
         </div>
       </div>
     </div>

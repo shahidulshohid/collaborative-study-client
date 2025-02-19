@@ -60,8 +60,8 @@ function ContactPage() {
           </p>
         </div>
       </div>
-      <div className="px-6 py-12">
-        <div className="md:flex items-center">
+      <div className="px-6 pt-12">
+        <div className="lg:flex items-center">
           <div className="flex-1">
             <img
               className="h-[400px] w-full object-cover"
@@ -72,7 +72,7 @@ function ContactPage() {
           <div className="flex-1 p-4">
             <div>
                 <h2 className="text-2xl font-bold md:text-3xl dark:text-white">Contact Info</h2>
-                <div className="flex items-center gap-2 my-5 text-white bg-[#3939c8] py-4 px-4 text-xl w-1/2 rounded-sm">
+                <div className="flex items-center gap-2 my-5 text-white bg-[#3939c8] py-4 px-4 text-lg md:text-xl md:w-1/2 rounded-sm">
                     <p><FaWhatsapp size={24}/></p>
                     <p>WhatsApp: +8801738283277</p>
                 </div>
