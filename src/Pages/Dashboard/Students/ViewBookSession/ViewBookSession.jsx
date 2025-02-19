@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import { TbListDetails } from "react-icons/tb";
@@ -19,10 +18,10 @@ const ViewBookSession = () => {
   return (
     <div>
       <div className=" mb-5">
-        <h3 className="text-center text-2xl md:text-3xl font-semibold">
+        <h3 className="text-center text-2xl md:text-3xl font-semibold dark:text-white">
           View Your Booked Study Sessions
         </h3>
-        <p className="max-w-2xl mx-auto text-center">
+        <p className="max-w-2xl mx-auto text-center dark:text-white">
           View Your Booked Study Sessions" allows users to see all their
           scheduled study sessions in one place. It provides session details,
           including date, time, subject, and tutor, ensuring easy access and
@@ -60,7 +59,7 @@ const ViewBookSession = () => {
                 <th>
                   <Link to={`/dashboard/viewDetails/${item._id}`}>
                     <button className="flex items-center gap-1 px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600">
-                    <TbListDetails  className="mt-1 text-lg"/>
+                      <TbListDetails className="mt-1 text-lg" />
                       View Details
                     </button>
                   </Link>
@@ -70,6 +69,11 @@ const ViewBookSession = () => {
           </tbody>
         </table>
       </div>
+      {session?.length === 0 && (
+        <h2 className="text-2xl md:4xl dark:text-white my-12">
+          DATA NOT FOUND
+        </h2>
+      )}
     </div>
   );
 };

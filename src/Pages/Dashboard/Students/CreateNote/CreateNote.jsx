@@ -27,16 +27,16 @@ const CreateNote = () => {
   };
   return (
     <div>
-      <h3 className="text-center text-2xl md:text-3xl font-semibold">
+      <h3 className="text-center text-2xl md:text-3xl font-semibold dark:text-white">
         Create Your Personal Notes
       </h3>
-      <p className="max-w-2xl mx-auto text-center mb-5">
+      <p className="max-w-2xl mx-auto text-center mb-5 dark:text-white">
         Create Your Personal Notes allows students to organize their thoughts,
         study materials, or reminders in one place. Easily save and manage your
         notes with a simple and intuitive interface tailored for effective
         learning
       </p>
-      <div className="px-3 py-5 md:px-5 md:py-8 rounded-lg w-3/4 mx-auto">
+      <div className="px-3 py-5 md:px-5 md:py-8 rounded-lg w-3/4 mx-auto dark:bg-white">
         <form onSubmit={handleNoteSubmit}>
           <div>
             <label>Student Email</label>

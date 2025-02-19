@@ -31,10 +31,10 @@ const ManagePersonalNode = () => {
   };
   return (
     <div>
-      <h3 className="text-center text-2xl md:text-3xl font-semibold">
+      <h3 className="text-center text-2xl md:text-3xl font-semibold dark:text-white">
         Manage Your Personal Notes
       </h3>
-      <p className="max-w-2xl mx-auto text-center mb-5">
+      <p className="max-w-2xl mx-auto text-center mb-5 dark:text-white">
         Create Your Personal Notes allows students to organize their thoughts,
         study materials, or reminders in one place. Easily save and manage your
         notes with a simple and intuitive interface tailored for effective
@@ -62,6 +62,11 @@ const ManagePersonalNode = () => {
             </div>
           </div>
         ))}
+        {
+          notes?.length === 0 && (
+            <h2 className="text-2xl md:4xl dark:text-white my-12">DATA NOT FOUND</h2>
+          )
+        }
       </div>
     </div>
   );
