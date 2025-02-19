@@ -11,12 +11,12 @@ import { CiLight } from "react-icons/ci";
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const [dark, setDark] = React.useState(false);
-    const darkModeHandler = () => {
-        setDark(!dark);
-        document.body.classList.toggle("dark");
-    }
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
+  };
 
   return (
     <div className="fixed w-full bg-[#3939c8] z-10 shadow-sm">
@@ -32,30 +32,30 @@ const Navbar = () => {
                 width="100"
                 height="100"
               />
-              <h3 className="hidden lg:flex text-2xl font-bold text-white">Study Sphere</h3>
+              <h3 className="hidden lg:flex text-2xl font-bold text-white">
+                Study Sphere
+              </h3>
             </Link>
             <div className="hidden md:flex items-center gap-5 text-white text-xl">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/about">About</NavLink>
               <NavLink to="/contact">Contact</NavLink>
               <NavLink to="/meetTeam">Meet Our Team</NavLink>
-              {user && (
-                <NavLink to="/dashboard">Dashboard</NavLink>
-              )}
+              {user && <NavLink to="/dashboard">Dashboard</NavLink>}
             </div>
             {/* Dropdown Menu */}
             <div className="relative">
               <div className="flex flex-row items-center gap-3">
                 {/* dark mode  */}
                 <div className="bg-white w-18 h-18 flex justify-center items-center rounded-full">
-                <button onClick={() => darkModeHandler()}>
-                  {
-                    dark && <CiDark size={28}/>
-                  }
-                  {
-                    !dark && <h1><CiLight size={28}/></h1>
-                  }
-                </button>
+                  <button onClick={() => darkModeHandler()}>
+                    {dark && <CiDark size={28} />}
+                    {!dark && (
+                      <h1>
+                        <CiLight size={28} />
+                      </h1>
+                    )}
+                  </button>
                 </div>
                 {/* Dropdown btn */}
                 <div
@@ -82,6 +82,24 @@ const Navbar = () => {
                       className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
                     >
                       Home
+                    </Link>
+                    <Link
+                      to="/about"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                    >
+                      Contact
+                    </Link>
+                    <Link
+                      to="/meetTeam"
+                      className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                    >
+                      Meet Our Team
                     </Link>
 
                     {user ? (

@@ -13,6 +13,7 @@ const MeetOurTeam = () => {
       .then((data) => setMeetData(data));
   }, []);
   return (
+    <div className="mt-14">
     <Container>
       <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white mb-8">
         Meet Our Faculty Members
@@ -60,6 +61,7 @@ const MeetOurTeam = () => {
         {meetData.length === 0 && <LoadingSection></LoadingSection>}
       </div>
     </Container>
+    </div>
   );
 };
 

@@ -27,14 +27,14 @@ const Footer = () => {
               </p>
               <div className="flex items-center gap-3 text-white text-2xl">
                 <Link
-                  to="https://www.facebook.com/"
+                  to="https://www.facebook.com/profile.php?id=100056264109156"
                   target="_blank"
                   className="hover:text-blue-500"
                 >
                   <FaFacebook />
                 </Link>
                 <Link
-                  to="https://bd.linkedin.com/"
+                  to="https://www.linkedin.com/in/shahidul-islam13"
                   target="_blank"
                   className="hover:text-blue-500"
                 >

@@ -62,7 +62,7 @@ function ContactPage() {
       </div>
     </div>
     <Container>
-      <div className="pt-12">
+      <div className="pt-16">
         <div className="lg:flex items-center">
           <div className="flex-1">
             <img
