@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import university from "../../assets/university.jpg";
 import whyChooseUs from "../../assets/whyChoose.png";
+import Container from "../Shared/Container/Container";
 
 const About = () => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const About = () => {
   }, []);
   return (
     <div className="pt-12">
-      <div className="container mx-auto px-4">
+      <Container>
         {/* Header Section */}
         <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white">
           About StudySphere
@@ -136,7 +137,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

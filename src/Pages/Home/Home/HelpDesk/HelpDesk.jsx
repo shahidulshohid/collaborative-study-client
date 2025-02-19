@@ -8,7 +8,7 @@ const HelpDesk = () => {
       <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white">
         Help Desk
       </h2>
-      <p className="text-center dark:text-white">
+      <div className="text-center dark:text-white">
       Let us help you find the best resource's to figure out how things works.
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
         <div className="bg-gray-100 rounded-lg space-y-3 text-center p-5 hover:scale-105 transition-transform">
@@ -40,7 +40,7 @@ const HelpDesk = () => {
             <p className="text-gray-600">Where you get to know all with our FAQ's database</p>
         </div>
       </div>
-      </p>
+      </div>
     </div>
   );
 };

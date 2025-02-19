@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import LoadingSection from "../Shared/LoadingSection/LoadingSection";
+import Container from "../Shared/Container/Container";
 
 const MeetOurTeam = () => {
   const [meetData, setMeetData] = useState([]);
@@ -12,7 +13,7 @@ const MeetOurTeam = () => {
       .then((data) => setMeetData(data));
   }, []);
   return (
-    <div className="container mx-auto px-4 pt-12">
+    <Container>
       <h2 className="text-center text-[#3939c8] text-2xl md:text-3xl font-semibold dark:text-white mb-8">
         Meet Our Faculty Members
       </h2>
@@ -25,7 +26,7 @@ const MeetOurTeam = () => {
             <img
               src={member.image}
               alt={member.name}
-              className="w-24 h-24 mx-auto rounded-full mb-4"
+              className="w-24 h-24 object-cover mx-auto rounded-full mb-4"
             />
             <h3 className="text-xl font-semibold">{member.name}</h3>
             <p className="text-gray-600 font-medium">{member.role}</p>
@@ -58,7 +59,7 @@ const MeetOurTeam = () => {
         ))}
         {meetData.length === 0 && <LoadingSection></LoadingSection>}
       </div>
-    </div>
+    </Container>
   );
 };
 

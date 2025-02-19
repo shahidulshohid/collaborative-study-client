@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import contactImg from "../../assets/contactImage.png";
 import contactImag2 from "../../assets/contact.jpg";
 import { FaWhatsapp } from "react-icons/fa6";
+import Container from "../Shared/Container/Container";
 function ContactPage() {
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -39,28 +40,29 @@ function ContactPage() {
 
   return (
     <div className="-mt-6">
-      <div
-        className="flex justify-center items-center"
-        style={{
-          backgroundImage: `url(${contactImag2})`,
-          height: "300px",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className='text-center text-white'>
-          <h3 className="text-3xl md:text-5xl font-bold mb-2">
-            Get In Touch With Ws
-          </h3>
-          <p className="text-white md:w-6/12 lg:w-5/12 mx-auto text-center px-2">
-            Don't hesitate to contact with us. Feel free to get in touch with
-            us. I am always open to discussing new projects, creative ideas or
-            opportunities to be part of your visions.
-          </p>
-        </div>
+    <div
+      className="flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${contactImag2})`,
+        height: "350px",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className='text-center text-white'>
+        <h3 className="text-3xl md:text-5xl font-bold mb-2">
+          Get In Touch With Ws
+        </h3>
+        <p className="text-white md:w-6/12 lg:w-5/12 mx-auto text-center px-2">
+          Don't hesitate to contact with us. Feel free to get in touch with
+          us. I am always open to discussing new projects, creative ideas or
+          opportunities to be part of your visions.
+        </p>
       </div>
-      <div className="px-6 pt-12">
+    </div>
+    <Container>
+      <div className="pt-12">
         <div className="lg:flex items-center">
           <div className="flex-1">
             <img
@@ -69,7 +71,7 @@ function ContactPage() {
               alt=""
             />
           </div>
-          <div className="flex-1 p-4">
+          <div className="flex-1">
             <div>
                 <h2 className="text-2xl font-bold md:text-3xl dark:text-white">Contact Info</h2>
                 <div className="flex items-center gap-2 my-5 text-white bg-[#3939c8] py-4 px-4 text-lg md:text-xl md:w-1/2 rounded-sm">
@@ -122,6 +124,7 @@ function ContactPage() {
           </div>
         </div>
       </div>
+    </Container>
     </div>
   );
 }
