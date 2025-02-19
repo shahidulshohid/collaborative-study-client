@@ -27,7 +27,7 @@ const DashboardLayout = () => {
     }
   }, [role])
   return (
-    <div className="md:flex">
+    <div className="md:flex bg-white dark:bg-gray-800">
       {/* responsive */}
       <div className="dropdown dropdown-hover md:hidden">
         <div tabIndex={0} role="button" className="btn m-1 text-xl font-bold">
