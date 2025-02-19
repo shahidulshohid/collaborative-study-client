@@ -1,14 +1,16 @@
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { SiStudyverse } from "react-icons/si";
 import { GiExplosiveMaterials } from "react-icons/gi";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 import useAuth from "../../../../Hooks/useAuth";
+import { CiDark, CiLight } from "react-icons/ci";
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
 const AdminHome = () => {
   const axiosSecure = useAxiosSecure();
-  const {user} = useAuth()
+  const { user } = useAuth();
   //all users
   const { data: allUsers = [] } = useQuery({
     queryKey: ["allUsers"],
@@ -51,9 +53,34 @@ const AdminHome = () => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
 
+  // dark and light mode
+  // dark and light mode
+  const [dark, setDark] = React.useState(false);
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
+  };
+
   return (
     <div>
-      <h2 className="text-center text-2xl md:text-3xl font-bold text-green-500 mb-6">Hi, Welcome {user?.displayName}</h2>
+      <div className="flex justify-start items-center mb-6 gap-5">
+        <div>
+          <img className="rounded-full w-14 h-14" src={user.photoURL} alt="" />
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#3939c8] dark:text-white">
+          Dashboard
+        </h2>
+        <div className="bg-white w-18 h-18 flex justify-center items-center rounded-full">
+          <button onClick={() => darkModeHandler()}>
+            {dark && <CiDark size={28} />}
+            {!dark && (
+              <h1>
+                <CiLight size={28} />
+              </h1>
+            )}
+          </button>
+        </div>
+      </div>
       <div className="flex justify-center items-center">
         <div className="stats shadow">
           <div className="stat">
@@ -99,31 +126,31 @@ const AdminHome = () => {
 
       {/* chart related  */}
       <div className="flex justify-center items-center mt-6">
-      <BarChart
-        width={500}
-        height={300}
-        data={allStudySession}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="title" />
-        <YAxis />
-        <Bar
-          dataKey="registrationFee"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
+        <BarChart
+          width={500}
+          height={300}
+          data={allStudySession}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
         >
-          {allStudySession?.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 6]} />
-          ))}
-        </Bar>
-      </BarChart>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="title" />
+          <YAxis />
+          <Bar
+            dataKey="registrationFee"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            {allStudySession?.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 6]} />
+            ))}
+          </Bar>
+        </BarChart>
       </div>
     </div>
   );

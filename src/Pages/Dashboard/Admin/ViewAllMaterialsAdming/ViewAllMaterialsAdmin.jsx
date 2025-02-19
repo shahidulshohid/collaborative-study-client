@@ -39,7 +39,7 @@ const ViewAllMaterialsAdmin = () => {
   };
   return (
     <div>
-      <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">
+      <h3 className="text-center text-2xl md:text-3xl font-semibold my-5 dark:text-white">
         View All Materials
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -47,15 +47,15 @@ const ViewAllMaterialsAdmin = () => {
           <div key={material._id}>
             <div>
               <img
-                className="h-[180px] w-full object-cover"
+                className="h-[180px] w-full object-cover rounded-lg"
                 src={material.image}
                 alt=""
               />
             </div>
-            <h3 className="text-sm font-semibold my-2">{material.title}</h3>
+            <h3 className="text-sm font-semibold my-2 dark:text-white">{material.title}</h3>
             <div className="flex justify-between items-center">
               <a
-                className="text-black font-semibold text-lg  underline"
+                className="text-black font-semibold text-lg  underline dark:text-white"
                 href={material.googleLink}
                 target="_blank"
               >

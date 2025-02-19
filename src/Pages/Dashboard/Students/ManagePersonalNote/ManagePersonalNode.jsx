@@ -42,7 +42,7 @@ const ManagePersonalNode = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {notes?.map((note) => (
-          <div key={note._id} className="text-center bg-base-200 py-5 px-5">
+          <div key={note._id} className="text-center bg-base-200 py-5 px-5 rounded-lg">
             <h3 className="text-lg font-semibold">Student Account</h3>
             <h4 className="font-semibold">{note.studentEmail}</h4>
             <h4 className="font-semibold">{note.title}</h4>

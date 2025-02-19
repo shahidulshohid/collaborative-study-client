@@ -78,9 +78,12 @@ const ViewAllStudy = () => {
   };
   return (
     <div>
-      <h3 className="text-center text-2xl md:text-3xl font-semibold my-5">
+      <div className="flex justify-between items-center">
+      <h3 className="text-2xl md:text-3xl font-semibold my-5 dark:text-white">
         View All Study Session
       </h3>
+      <button className="btn bg-primary text-white text-lg">sdfsdf</button>
+      </div>
       <div className="overflow-x-auto bg-gray-100">
         <table className="table table-zebra">
           {/* head */}

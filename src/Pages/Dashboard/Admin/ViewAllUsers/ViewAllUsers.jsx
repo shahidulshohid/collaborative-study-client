@@ -67,8 +67,8 @@ const ViewAllUsers = () => {
   return (
     <div>
       <div className="flex justify-evenly my-4">
-        <h2 className="text-xl md:text-3xl">All Users</h2>
-        <h2 className="text-xl md:text-3xl">Total Users: {users.length}</h2>
+        <h2 className="text-xl md:text-3xl dark:text-white">All Users</h2>
+        <h2 className="text-xl md:text-3xl dark:text-white">Total Users: {users.length}</h2>
       </div>
 
       <div className="flex justify-center mt-3 mb-4 p-1 overflow-hidden focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
