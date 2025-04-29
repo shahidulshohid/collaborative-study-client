@@ -16,7 +16,7 @@ const TopTutors = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {tutors.map((tutor) => (
-          <div key={tutor.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div key={tutor.id} className="bg-white shadow-lg rounded-lg overflow-hidden scale-y-100 hover:scale-y-105 transition-transform">
             <img
               className="w-full h-64 object-cover"
               src={tutor.image}
