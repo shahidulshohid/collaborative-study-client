@@ -1,4 +1,4 @@
-import { useState } from "react";
+ import { useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -62,7 +62,7 @@ const CreateStudySession = () => {
       <h3 className="text-center mb-5 text-2xl md:text-3xl font-semibold">
         Create study session
       </h3>
-      <div className="bg-[#d0e293] px-5 lg:px-8 py-6">
+      <div className=" px-5 lg:px-8 py-6">
       <form onSubmit={handleCreateSessionForm}>
         {/* first title and description */}
         <div className="lg:flex gap-3 mb-3">
