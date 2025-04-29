@@ -8,7 +8,7 @@ const FaqSection = () => {
         Find answers to common questions about our study sessions, enrollment,
         and more. Still have queries? Contact our support team!
       </p>
-      <div className="bg-base-200 rounded-lg">
+      <div className="rounded-lg">
         <div
           tabIndex={0}
           className="collapse collapse-arrow border-base-300 border"
@@ -28,7 +28,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             How do I stay motivated during my studies?
@@ -45,7 +45,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             How do I manage my time effectively while studying?
@@ -62,7 +62,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             What is the importance of group study sessions?
@@ -82,7 +82,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             What is the importance of taking notes during lectures?
@@ -99,7 +99,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             How do I improve my critical thinking skills?
@@ -116,7 +116,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             What are the best study techniques for memorization?
@@ -133,7 +133,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             How do I handle academic stress?
@@ -150,7 +150,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             How do I stay organized with my academic materials?
@@ -167,7 +167,7 @@ const FaqSection = () => {
         </div>
         <div
           tabIndex={0}
-          className="collapse collapse-arrow border-base-300 bg-base-200 border"
+          className="collapse collapse-arrow border-base-300 border"
         >
           <div className="collapse-title text-xl font-medium">
             How do I stay motivated during my studies?
